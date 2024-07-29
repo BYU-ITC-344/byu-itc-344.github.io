@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>{{ page.title }}</title>
+{% include head.html %}
+<style>
+
+    :root {
+        background-color: black;
+        font-size: 20pt;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    body {
+        min-width: 133vh;
+        max-width: 140vh;
+        margin: 0 auto;
+        display: flex;
+        align-items: stretch;
+        height: 100%;
+    }
+
+    .col1, .col2 {
+        flex: 1 1 0;
+        padding: 1em;
+    }
+
+    .vertborder {
+        background-image: linear-gradient(white, #808080, #808080, white);
+        flex: 0 0 0.1in;
+    }
+
+    .title {
+        margin-top: 5rem;
+        font-size: 2rem;
+    }
+
+    .countdown {
+        margin: 5em auto 0 auto;
+        font-family: Consolas, fixed;
+        font-size: 2em;
+        color: white;
+        text-align: center;
+        width: 7em;
+        background-color: black;
+    }
+
+    .quiz {
+        margin: 5em auto 0 auto;
+        border: 2px solid black;
+        padding: 0.1em;
+    }
+
+    .quiz ul {
+        margin-left: 1.5em;
+    }
+
+    .quizpw {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    article {
+        font-size: 16pt;
+    }
+
+    .col2 ul {
+        margin-left: 0.5em;
+    }
+
+    .col2 ul>li>ul {
+        margin-bottom: 0;
+    }
+
+    .col2 img {
+        display: block;
+        max-width: 100%;
+        max-height: 25em;
+        margin: 1em auto 0 auto;
+    }
+
+</style>
+</head>
+
+<body>
+    <div class="col1">
+        <div class="title">{{ page.title }}</div>
+        <div class="subtitle">IT&C 344 - {{ page.session }}</div>
+        <div class="countdown" id="countdown" onclick="startCountdown()">Start</div>
+        <div class="hidden" id="quiz">
+            <div>Quiz</div>
+            <ul>
+                <li>10 Minutes (though you can continue after we start the lecture)</li>
+                <li>Closed book, closed internet, closed notes, closed neighbor, etc.</li>
+            </ul>
+            <div>Password:</div>
+            <div class="quizpw">{{ page.quiz }}</div>
+        </div>
+    </div>
+    <div class="vertborder">
+    </div>
+    <div class="col2">
+        <h2>Announcements:</h2>
+        <article>
+            {{ content }}
+        </article>
+    </div>
+
+    <script>
+
+        // Offset of the bell from UTC in milliseconds.
+        const bellOffset = 0 * 60000;
+        
+        let eleCountdown = document.getElementById("countdown");
+        let timer;
+
+        function tick()
+        {
+            let remaining = Math.floor((3600000 - ((Date.now()-bellOffset) % 3600000)) / 100);
+            const tenths = remaining % 10;
+            remaining = (remaining - tenths) / 10
+            const seconds = remaining % 60;
+            const minutes = (remaining - seconds) / 60;
+            if (minutes < 40)
+            {
+                eleCountdown.textContent = minutes.toString().padStart(2,'0') + ":" + seconds.toString().padStart(2,'0') + "." + tenths.toString();
+            }
+            else
+            {
+                eleCountdown.textContent = "00:00.0";
+                let sound = new Audio('/res/timpani.mp3');
+                sound.play();
+                window.clearInterval(timer);
+            }
+        }
+
+        function startCountdown() {
+            let eleCountdown = document.getElementById("countdown");
+            eleCountdown.onclick = undefined;
+            timer = window.setInterval(tick, 100);
+        }
+
+
+        function showQuizInfo() {
+            document.getElementById('countdown').className = 'hidden';
+            document.getElementById('quiz').className = 'quiz';
+        }
+
+        function onKeyDown(e)
+        {
+            if (e.keyCode == 81) { // Letter Q
+                showQuizInfo();
+            }
+            else if (e.keyCode == 82) {
+                startCountdown();
+            }
+        }
+
+        document.addEventListener('keydown', onKeyDown);
+
+    </script>
+
+</body>
+
+</html>
