@@ -5,7 +5,7 @@ title: Lab 2 - Containers
 
 ## Introduction
 
-You have already had some exposure to virtualization in the last lab. This lab aims to strengthen your understanding of containerization. In this lab you will learn about two forms of containeration: operating system containers, and application containers.
+You have already had some exposure to virtualization in the last lab. This lab aims to strengthen your understanding of containerization. In this lab you will learn about two forms of containerization: operating system containers, and application containers.
 
 #### Containers
 
@@ -59,6 +59,8 @@ on the OS to further configure settings.
 Docker compose files use yaml to manipulate Docker images to create and destroy docker containers. They are an easy alternative to commandline arguments.
 Compose files can also use Dockerfiles to create Docker images.  
 ```
+
+Your boss also emails you a link to the source code to the website which uses Python as the host. [This is that link to the source code.](Lab2SiteSource.zip)
 
 The web dev team also left you a note that the only non-standard dependencies needed for the python server to run are flask and dotenv.
 
