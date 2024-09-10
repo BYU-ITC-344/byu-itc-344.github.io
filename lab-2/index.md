@@ -65,7 +65,7 @@ Compose files can also use Dockerfiles to create Docker images.
 </div>
 
 
-Your boss also emails you a link to the source code to the website which uses Python as the host. [This is that link to the source code.](Lab2SiteSource.zip)
+Your boss also emails you a link to the source code to the website which uses Python as the host. [This is the link to the source code.](Lab2SiteSource.zip)
 
 The web dev team also left you a note that the only non-standard dependencies needed for the python server to run are flask and dotenv.
 
@@ -127,7 +127,7 @@ Create the Container for your new image. You can do this using docker commands o
 
 Take a screenshot with DockerDesktop on one side of the screen and your website on the other. The DockerDesktop side should show the columns `Name`, `Image`, `Status`, `Port(s)`. The broswer should show the port number. The following is an example.
 
-![working-image-and-container](example.png){: style="width: 90%;"}
+![working-image-and-container](example.png){: style="width: 90%; margin: 0 auto; padding 0.5em; border: 1px solid #808080;"}
 
 ### Step 3 - Upload Your Image to DockerHub
 You will have to create an account then upload your image. Take a screenshot of your image in Dockerhub.
