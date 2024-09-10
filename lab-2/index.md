@@ -38,9 +38,12 @@ After this lab, you will have worked installed or worked with
 ## Senario 
 Your boss tells you the web dev team has come up with a new website. They believe it is ready for deployment but want feedback from other parts of the company. In production the company deploys websites via Docker images on a VM. Your boss want you to set up a new low-weight testing environment in proxmox for the website. He wants you to build a LXC container. The site itself should be secure but as a precaution he wants you to ensure that you create an unprivileged LXC container. He also wants you to build the docker image and document the process. The company lost their last employee fluent in Docker.
 
-Before leaving, you boss sends you a document the last Docker guy left. 
+Before leaving, you boss sends you a document the last Docker guy left.
 
-```text
+{::options parse_block_html="true" /}
+
+<div style="border: 1px solid #808080; margin: 1em; padding: 0.5em;" markdown="1">
+
 Understanding Fundamentals of Docker
 
 Docker is a useful tool that allows the deployement of webservers and other services in a way that is portable.
@@ -57,8 +60,10 @@ A Dockerfile is useful for building a custom image. In a dockerfile you have the
 on the OS to further configure settings.  
 
 Docker compose files use yaml to manipulate Docker images to create and destroy docker containers. They are an easy alternative to commandline arguments.
-Compose files can also use Dockerfiles to create Docker images.  
-```
+Compose files can also use Dockerfiles to create Docker images.
+
+</div>
+
 
 Your boss also emails you a link to the source code to the website which uses Python as the host. [This is that link to the source code.](Lab2SiteSource.zip)
 
@@ -122,7 +127,7 @@ Create the Container for your new image. You can do this using docker commands o
 
 Take a screenshot with DockerDesktop on one side of the screen and your website on the other. The DockerDesktop side should show the columns `Name`, `Image`, `Status`, `Port(s)`. The broswer should show the port number. The following is an example.
 
-![working-image-and-container](example.png)
+![working-image-and-container](example.png){: style="width: 90%;"}
 
 ### Step 3 - Upload Your Image to DockerHub
 You will have to create an account then upload your image. Take a screenshot of your image in Dockerhub.
