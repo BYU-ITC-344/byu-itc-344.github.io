@@ -47,23 +47,18 @@ Before leaving, you boss sends you a document the last Docker guy left.
 Understanding Fundamentals of Docker
 
 Docker is a useful tool that allows the deployement of webservers and other services in a way that is portable.
-It's amazing but the general organization of images, containers, Dockerfiles, and docker-compose.yaml files can be confusing.
-This document aims to clarify the general structure and use of the previously mentioned items.
+It's amazing but the general organization of images, containers, Dockerfiles, and docker-compose.yaml files can be confusing. This document aims to clarify the general structure and use of the previously mentioned items.
 
 Docker containers are the goal. Containers are live implementation of a service on a contained OS. They can be created, stopped, started, or deleted. 
 
-Docker images are the templates to create Docker containers. The image contains information for a future container. It contains details of the OS to use and the tools avaiable to it.
-There are many preconfigured Docker images that you can use as a basis for projects. They are avaliable on Dockerhub. Dockerhub is a site that you can pull images from and upload your own images
-for later deployment.
+Docker images are the templates to create Docker containers. The image contains information for a future container. It contains details of the OS to use and the tools avaiable to it. There are many preconfigured Docker images that you can use as a basis for projects. They are avaliable on Dockerhub. Dockerhub is a site that you can pull images from and upload your own images for later deployment.
 
-A Dockerfile is useful for building a custom image. In a dockerfile you have the ability to choose a base operating system, install tools and applications, and execute commands 
-on the OS to further configure settings.  
+A Dockerfile is useful for building a custom image. In a dockerfile you have the ability to choose a base operating system, install tools and applications, and execute commands on the OS to further configure settings.  
 
 Docker compose files use yaml to manipulate Docker images to create and destroy docker containers. They are an easy alternative to commandline arguments.
 Compose files can also use Dockerfiles to create Docker images.
 
 </div>
-
 
 Your boss also emails you a link to the source code to the website which uses Python as the host. [This is the link to the source code.](Lab2SiteSource.zip)
 
@@ -74,7 +69,7 @@ The web dev team also left you a note that the only non-standard dependencies ne
 Read offical documentation on proxmox containers [here](https://pve.proxmox.com/wiki/Linux_Container#pct_container_images).
 Proxmox has access to LXC templates. You may use the command line or GUI to install one of your choosing.
 
-- First, install a template.
+- First, install a VM template. Choose from the ones already on your Proxmox VM.
 - Next, create a new LXC container (CT).
 - Now, install Docker. 
     There are a few different packages for docker depending on the operating system you choose.
@@ -105,6 +100,7 @@ Tips:
 - You can specify which port number the container will use
 - Sudo permissions may be required to run Docker commands
 - Ensure you take notes on how to make a Docker container from steps 2.2 - 2-4
+- If you build a container on MacOS then it will use the ARM64 architecture. So make sure you build your container image on your VM so that it uses x86-64 architecture.
 
 ### Step 2.1 - Installation
 Configure your local machine as a development environment. On your local machine install Docker Desktop.
