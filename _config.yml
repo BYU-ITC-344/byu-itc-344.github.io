@@ -12,6 +12,7 @@ exclude:
   - template-layout.html
   - template.md
   - lab-2/Lab-2-writeup-template.md
+  - Lab-2-writeup-template.md
 defaults:
   -
     scope:
