@@ -131,11 +131,18 @@ You will have to create an account then upload your image. Take a screenshot of 
 ### Step 4 - Pull Down Docker Image and Create Container in Your Linux Container
 You can pull down the Docker Image and create a container in the commandline or use a Docker-Compose file.
 If you created a compose file in step 2.4 you should be able to reuse it.
-Take a screenshot of the running container and the website pulled up on a browser
+Take a screenshot of the running container and the website pulled up on a browser.
 
 ### Step 5 - Write Up
 
-Answer the questions using the `Write Up` file provided and include all necessary screenshots. There should only be one screenshot for each title in the document.
+Answer the questions using the `Write Up` template provided and include all necessary screenshots. There should only be one screenshot for each title in the document.
+
+* [Click here to download the write up template in MS Word .docx format](Lab-2-writeup-template.docx){: download}
+* [Click here to download the write up template in MarkDown format](Lab-2-writeup-template.md){: download}
+
+Regardless of which template you use, **Please submit your writeup in .pdf format!**
+
+There are many ways to convert from MarkDown to PDF including some online tools. Among the most convenient is the [yzane Markdown PDF Add-In for VS Code](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf).
 
 ## Helpful links
 
