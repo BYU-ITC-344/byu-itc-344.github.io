@@ -138,7 +138,7 @@ Take a screenshot of the running container and the website pulled up on a browse
 Answer the questions using the `Write Up` template provided and include all necessary screenshots. There should only be one screenshot for each title in the document.
 
 * [Click here to download the write up template in MS Word .docx format](Lab-2-writeup-template.docx){: download}
-* [Click here to download the write up template in MarkDown format](Lab-2-writeup-template.md){: download}
+* <a href="Lab-2-writeup-template.md" download>Click here to download the write up template in MarkDown format</a>
 
 Regardless of which template you use, **Please submit your writeup in .pdf format!**
 
