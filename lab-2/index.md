@@ -140,6 +140,13 @@ Answer the questions using the `Write Up` template provided and include all nece
 * [Click here to download the write up template in MS Word .docx format](Lab-2-writeup-template.docx){: download}
 * <a href="Lab-2-writeup-template.md" download>Click here to download the write up template in MarkDown format</a>.
 
+{% comment %}
+(This is a Jekyll / Liquid comment. Straight MarkDown will still include the note. - and that's OK.)
+
+GitHub Pages includes the 
+
+{% endcomment %}
+
 Regardless of which template you use, **Please submit your writeup in .pdf format!**
 
 There are many ways to convert from MarkDown to PDF including some online tools. Among the most convenient is the [yzane Markdown PDF Add-In for VS Code](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf).

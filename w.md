@@ -1,6 +1,6 @@
 ---
 title: Welcome
 layout: redirect
-redirect: /welcome/S04
+redirect: /welcome/S05
 ---
 Redirect
