@@ -18,7 +18,7 @@
 #### c. How do you build a docker image from a `Dockerfile` with the `docker` command?
 
 ## Written Answer
-*Your boss still wants a short list of instructions on how to create a Docker image. Please include your instructions below. The instructions should include enough detail so that a future employee can follow steps to create their own image. Must include more detail than "Step 1/2 create a Dockerfile. Step 2/2 use the docker build command."
+*Your boss still wants a short list of instructions on how to create a Docker image. Please include your instructions below. The instructions should include enough detail so that a future employee can follow steps to create their own image. Must include more detail than "Step 1/2 create a Dockerfile. Step 2/2 use the docker build command.*
 
 ## Screenshots
 *Insert the following screenshots:*
