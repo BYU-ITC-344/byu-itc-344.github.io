@@ -26,7 +26,7 @@ At the conclusion of your project, you will fill out an evaluation of each team 
 ## Project Options
 Choose one of the following projects. Each of these is intentionally challenging and will require you to look up information online. You may also seek insight from experts who have done this sort of thing before. While getting direction from experts is a good idea, all work must be done by members of your team. For most projects you will build upon existing source or tools. In your documentation, be sure to indicate what external tools and resources you used.
 
-#### Create your Own Linux Distro
+#### Create Your Own Linux Distro
 There are some great resources for creating your own Linux distro from scratch using source code. A good starting point is [Linux From Scratch](https://www.linuxfromscratch.org/). You will need to create a functioning distro and justify the design decisions you made during the process. Think of a specific use case or task that you want this operating system to do and design it with that goal in mind.
 
 #### Create a Kubernetes Cluster
