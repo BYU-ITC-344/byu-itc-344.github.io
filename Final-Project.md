@@ -1,5 +1,5 @@
 ---
-Final Project
+title: Final Project
 ---
 
 The final project is worth 250 points overall which accounts for nearly 25% of your grade:
