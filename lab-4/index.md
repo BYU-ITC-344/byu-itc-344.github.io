@@ -57,7 +57,7 @@ Answer the questions in the `Write up` file and include the needed screenshots
 ## Requirements
 
 [ ] 15 Points - Get into the Windows VM and reset the password for an account other than the flag account  
-[ ] 15 Points - Get into the Linux VM and reset the password for an account other than the flag account  
+[ ] 15 Points - Get into the Linux VM and reset the password for an account other than the bob account  
 [ ] 15 Points - Get into the Mac and reset the password for an account other than the flag account  
 [ ] 15 Points - Crack the Linux password  
 [ ] 15 Points - Crack the Windows password  
