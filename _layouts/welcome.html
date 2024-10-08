@@ -137,6 +137,15 @@
             <div>Password:</div>
             <div class="quizpw">{{ page.quiz }}</div>
         </div>
+        {% elsif page.exam %}
+        <div class="hidden" id="quiz">
+            <div>Exam</div>
+            <ul>
+                <li>Closed book, closed internet, closed notes, closed neighbor, etc.</li>
+            </ul>
+            <div>Password:</div>
+            <div class="quizpw">{{ page.exam }}</div>
+        </div>
         {% endif %}
     </div>
     <div class="vertborder">
@@ -182,7 +191,7 @@
             timer = window.setInterval(tick, 100);
         }
 
-{% if page.quiz %}
+{% if page.quiz or page.exam %}
         function showQuizInfo() {
             document.getElementById('countdown').className = 'hidden';
             for (const ele of document.getElementsByClassName('col1img')) {
