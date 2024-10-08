@@ -25,7 +25,7 @@ Which MAC did you break into? (There is a number in marker on the back) What was
 What was the Windows hash you were given? What is the password?
 <br/>
 
-What was the hash of flag’s password on Linux? What was flag’s password in the Linux machine?
+What was the hash of bob’s password on Linux? What was bob’s password in the Linux machine?
 <br/>
 
 ## Screenshots
