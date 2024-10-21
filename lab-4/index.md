@@ -16,6 +16,8 @@ You may collaborate with one another while breaking into the VMs, but you are no
 
 Additionally, you will break into a physical Mac device. On Mac there will be an account called 'flag' and on the Linux VM there will be an account called 'bob'. You will need to recover the hashes for these accounts and then crack the passwords. For the Windows VM, you will only need to break in. A Windows password hash will be given to you separately. The Windows hash does not relate to any user from the Windows VM. We have provided a hash for you because extracting Windows hashes is difficult without special tools.  
 
+>Note: Please look at the write-up while doing the lab so you know what deliverables are required.
+
 
 ### Step 1 - Breaking In - VMs
 
@@ -55,7 +57,7 @@ Answer the questions in the `Write up` file and include the needed screenshots
 <div style="page-break-after: always"></div>
 
 ## Requirements
-
+**Please** check the writeup for specifics you need to submit. <br>
 [ ] 15 Points - Get into the Windows VM and reset the password for an account other than the flag account  
 [ ] 15 Points - Get into the Linux VM and reset the password for an account other than the bob account  
 [ ] 15 Points - Get into the Mac and reset the password for an account other than the flag account  
