@@ -131,7 +131,9 @@ The website must be accessible on port 80, located in the file `/var/www/html/in
 ## Write Up
 Answer the questions in the write up template. Include the screenshots and the script you used to detect and remove malware.
 
-{% We use HTML here for the links because if you use MarkDown Jekyll converts a link to a .md file into a link to a rendered .html file.  %}
+{% comment %}
+We use HTML here for the links because if you use MarkDown Jekyll converts a link to a .md file into a link to a rendered .html file.
+{% endcomment %}
 * <a href="Lab-5-Write-Up.docx" download>Click here to download the write up template in MS Word .docx format</a>
 * <a href="Lab-5-Write-Up.md" download>Click here to download the write up template in MarkDown format</a>
 
