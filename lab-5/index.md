@@ -38,6 +38,7 @@ Every 5 minutes, your system will be checked for any files that match the malici
 /var
 /dev
 /bin
+/usr
 ```
 
 You are **NOT** permitted to use any form of existing anti-malware or program. You must write and implement your own program to find and remove the malicious file when found.
