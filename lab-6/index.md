@@ -31,7 +31,7 @@ After this lab, you will have worked with:
 To ensure your OpenVMS installation is up-to-date with the latest vulnerability information, you need to synchronize the openVAS database with the Greenbone Community Feed. This can be done using the `greenbone-feed-sync` command. On your openVAS VM open a terminal and execute the following command:
 
 ```sh
-sudo greenbone-feed-sync scapa
+sudo greenbone-feed-sync --type scap
 ```
 
 This command will initiate the synchronization process, downloading the most recent vulnerability data and integrating it into your local openVAS database. Keeping your database current is crucial for accurate and effective vulnerability assessments.
