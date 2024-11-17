@@ -41,7 +41,7 @@ For studying, use whatever resources you prefer: textbook, slide deck, web searc
 * What is a private cloud? Does BYU have one?
 
 ## File and Printer Sharing
-* How were Local Area Networks (LANs) used before the internet? Do they still serve that function?
+* How were Local Area Networks (LANs) used before the internet? Do they still serve those functions?
 * How does a computer discover printers on the network?
 * There are a lot of different print and file sharing protocols. Why do you think that is?
 
