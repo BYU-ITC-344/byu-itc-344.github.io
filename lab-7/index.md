@@ -83,7 +83,7 @@ The report templates can be found here.
 
 ##  Guidelines
 1. Authorized administrator passwords are correct when the lab starts, but this is not guaranteed to remain the case.
-1. You can check your current score by going to `172.16.16.2` and using your NetId and unique id to log in.
+1. You can check your current score by going to `172.16.16.2` and using your unique id contained in the lab email to log in.
 1. If your VM becomes corrupted beyond use or can no longer be salvaged at any point, it can be reset by the TA to its original state. Doing so will reset your points to 0, and you will not be given more time on the assignment. Resets will only be performed during regular business hours. Do not message the TAs before 9:00 am or after 5:00 pm. The first reset will not have a penalty, but any after that will incur a 10-point penalty per reset.
 1. Make sure to read the documentation that details what services should be running, who the valid users and administrators are, any company requirements for that VM, and what software packages are allowed or prohibited. 
 1. The lab's overall goal is to find and fix as many security, configuration, or policy issues as possible. However, you may make a change that could fix a problem that is not scored or do it in a way not recognized by the scoring engine.
