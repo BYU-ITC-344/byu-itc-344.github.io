@@ -20,7 +20,7 @@ Scoring will update approximately every minute. You can find your score and a po
 
 There are multiple ways to achieve some of the objectives, and we may not have been able to account for them all, so if you believe your solution to a problem should have given you points, try another method, and then if that still doesn't work reach out to a TA. It may also be that you fix or harden something for which no points are awarded.
 
-There will be a total of 460 points, but to get full points for the lab, you will only need 350. Anything over that will significantly improve your learning but will not give you more points toward your grade.
+There will be a total of 670 points, but to get full points for the lab, you will only need 350. Anything over that will significantly improve your learning but will not give you more points toward your grade.
 
 ## Connecting to the machine
 
@@ -88,7 +88,7 @@ The report templates can be found here.
 1. Make sure to read the documentation that details what services should be running, who the valid users and administrators are, any company requirements for that VM, and what software packages are allowed or prohibited. 
 1. The lab's overall goal is to find and fix as many security, configuration, or policy issues as possible. However, you may make a change that could fix a problem that is not scored or do it in a way not recognized by the scoring engine.
 1. Some things to look out for include removing users, password policies, unauthorized scripts or shells, non-work related materials, prohibited software, etc. 
-1. 48 hours after the lab has started, the red team will go from passive to active, so make sure you start on the lab or early
+1. On Thursday Nov 21st, the red team will go from passive to active, so make sure you start on the lab or early
 1. There is a total of 670 Points available, but only 350 are needed to get full points on the lab. Additional points will not change your grade or count as extra credit.
 
 ## Grading 
