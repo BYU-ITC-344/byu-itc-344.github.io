@@ -2,9 +2,11 @@
 title: Final Project Documentation
 ---
 
-*(Draft. The final version will be posted here by end-of-day Tuesday.)*
-
 Your final project documentation is due on the last day of class (before reading day and final exams). Your documentation should provide sufficient information that someone could use the product or repeat the experiment. It should also report on your process for creating the project similar to what you offer in the live presentation. Your presentation and documentation combined serve as evidence of a working project.
+
+## Creation and Submission
+
+**Submit your documentation to LearningSuite in PDF format.** Use whatever tool you want to produce the documentation so long as it can produce a **PDF** (MS Word, Google Docs, Apple Pages, MarkDown, Overleaf/LaTeX, etc.).
 
 **Examples**
 
@@ -14,13 +16,13 @@ Your final project documentation is due on the last day of class (before reading
 
 ## Suggested Outline
 
-Here is a rough outline to start from. Due to the variety of projects, you should adapt to present your information according to your best judgment for your particular project.
+Here is a rough outline to start from. Due to the variety of subjects, you should use your judgment and adapt this to present your project in a way that effectively communicates its subject, goals, process, and results.
 
 * Identification
     * Team number
     * Team name (if applicable)
     * Team members
-    * Project type
+    * Project name or type
 * Introduction
     * What the project does
     * Benefits of the project
