@@ -8,7 +8,7 @@ Your final project documentation is due on the last day of class (before reading
 
 **Submit your documentation to LearningSuite in PDF format.** Use whatever tool you want to produce the documentation so long as it can produce a **PDF** (MS Word, Google Docs, Apple Pages, MarkDown, Overleaf/LaTeX, etc.).
 
-**Examples**
+## Examples
 
 * Documentation for a Linux Distro would have information about how to install and use the distro. It would describe what is different between this and other distros. The creation part would describe how you decided which features to include and sources of information.
 * Documentation for a Kubernetes Cluster would describe your cluster, what it accomplishes, and what tests you performed on its functions. The creation part would describe your planning process and sources of information.
@@ -44,6 +44,10 @@ Here is a rough outline to start from. Due to the variety of subjects, you shoul
 ## Academic Integrity
 
 Writing should be original unless clearly quoted. Source materials should be cited. Do not have AI generate your content.
+
+## Length and Format
+
+We have no page count, word count, font size, or margin guidelines. Please make the document long enough to cover the subject but not so long that it gets boring or repetitive. Use fonts, margins, headings and such that make the document appealing and easy to read. Be sure to cite references to any external materials that you used including websites, instructions, and so forth. Use any citation format that works for you.
 
 ## Grading Rubric
 
