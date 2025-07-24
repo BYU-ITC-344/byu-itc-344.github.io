@@ -1,6 +1,9 @@
 timezone: America/Denver
 encoding: utf-8
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 exclude:
   - README.md
   - LICENSE
@@ -11,6 +14,8 @@ exclude:
   - template-bare.html
   - template-layout.html
   - template.md
+  - .vs/
+
 defaults:
   -
     scope:
@@ -23,6 +28,11 @@ defaults:
       type: "welcome"
     values:
       layout: "welcome"
+  -
+    scope:
+      path: "slides/*.pptx"
+    values:
+      viewer: ppt
 collections:
   welcome:
     output: true
