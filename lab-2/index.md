@@ -140,13 +140,6 @@ Answer the questions using the `Write Up` template provided and include all nece
 * [Click here to download the write up template in MS Word .docx format](Lab-2-writeup-template.docx){: download}
 * <a href="Lab-2-writeup-template.md" download>Click here to download the write up template in MarkDown format</a>.
 
-{% comment %}
-(This is a Jekyll / Liquid comment. Straight MarkDown will still include the note. - and that's OK.)
-
-GitHub Pages includes the 
-
-{% endcomment %}
-
 Regardless of which template you use, **Please submit your writeup in .pdf format!**
 
 There are many ways to convert from MarkDown to PDF including some online tools. Among the most convenient is the [yzane Markdown PDF Add-In for VS Code](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf).
@@ -173,4 +166,7 @@ There are many ways to convert from MarkDown to PDF including some online tools.
 [ ] 30 Points - Writeup
 
 ## Submission
-Create a single PDF from the given `Write Up` file that contains your written report and screenshots showing that each requirement has been satisfied. Upload the PDF to Learning Suite.
+Create a single PDF from one of the given `Write Up` templates that contains your written report and images showing that each requirement has been met. Upload the **PDF** to Learning Suite. *No other file format will be accepted.*
+
+* If you use the .docx template, edit your writeup in Microsoft Word or Google Docs and use the **export to .PDF function.**
+* If you use the MarkDown template, the [Markdown PDF VS Code add-in](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf) is among the better options. Regardless, make sure the method you use includes your images.
