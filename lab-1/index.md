@@ -1,165 +1,234 @@
-# Lab 1 - Hypervisors, Containers & Operating Systems
+---
+title: Lab 1 - Hypervisors & Operating Systems
+---
+# Lab 1 - Hypervisors & Operating Systems
 
 ## Introduction
+
 Welcome to the first lab of IT&C 344!
 
-As the only significant assignments in this class apart from the final project, labs are designed to take several hours to complete, and as such, they should not be left to the last minute to do. You should expect to work on each lab for 10 -15 hours (5-6+ hours a week). Procrastinate these labs at your own risk!
+As the only significant assignments in this class apart from the final project, labs are designed to take several
+hours to complete, and as such, they should not be left to the last minute to do. You should expect to work on
+each lab for 10 -15 hours (5-6+ hours a week). Procrastinate these labs at your own risk!
 
-The labs outline your objectives and give some instructions on how to proceed. However, most of the how-to-do will come from your research and diligence. You must practice your research and problem-solving skills as you would when working in IT and Cybersecurity. The labs are designed to be a beneficial learning experience, but if you cannot find a solution after working on the problem by yourself for a significant amount of time and putting in genuine effort, the TAs are there to assist you.
+The labs outline your objectives and give some instructions on how to proceed. However, most of the how-todo will come from your research and diligence. You must practice your research and problem-solving skills as you would when working in IT and Cybersecurity. The labs are designed to be a beneficial learning experience, but if you cannot find a solution after working on the problem by yourself for a significant amount of time and putting in genuine effort, the TAs are there to assist you.
 
-### Virtual Machines, Containers, and Hypervisors
 
-A key concept for labs 1 and 2 is to understand what are **virtual machines (VMs)**, **containers**, and **hypervisors** but also the differences between them.
+### Virtual Machines
 
-#### Virtual Machines
+A **virtual machine (VM)** is like a computer inside your computer. It runs its own operating system and applications, just like a real computer, but it does so using software that mimics physical hardware. This includes virtual CPU, memory (RAM), storage, and network interfaces.
 
-A virtual machine (VM) and a container are both methods for running applications and operating systems in a virtualized environment, but they differ in their approach to virtualization.
+Virtual machines run on top of a **hypervisor**, which is a program that manages the virtual environment and connects the VM to the actual physical hardware of your computer. Because a VM includes a full operating system and virtual hardware, it usually takes up more system resources and can be slower to start compared to other methods of virtualization.
 
-A virtual machine emulates an entire computer system, including the hardware, operating system, and applications. It runs on top of a hypervisor, which abstracts the underlying physical hardware and provides a virtualized environment for the VM. Each VM has its own virtual hardware, such as virtual CPU, RAM, storage, and network interfaces. VMs are typically larger than containers and require a hypervisor to be installed on the host machine.
+### Containers
 
-#### Containers
+A **container** is another way to run applications in a virtualized environment, but it works differently from a VM. Instead of emulating an entire computer, a container shares the host computer’s operating system while keeping applications isolated from each other.
 
-A container, on the other hand, virtualizes the operating system but not the hardware. It shares the kernel of the host operating system and uses it to run applications in isolated user-space instances. Containers are smaller and lighter-weight than VMs, and they can start up faster and use fewer system resources. Multiple containers can run on the same host system, and each container shares the host's operating system kernel.
+This makes containers much **lighter and faster** than VMs. They start quickly, use fewer system resources, and multiple containers can run on the same host without interfering with each other. Containers are ideal for running individual applications or services rather than full operating systems.
 
-<div style="page-break-after: always"></div>
+### Hypervisors
 
-#### Hypervisors
+A **hypervisor** is the software that makes virtual machines possible. It sits between the physical hardware of your computer and the virtual machines, managing how resources like CPU, memory, and storage are shared.
 
-A hypervisor, also known as a virtual machine monitor (VMM), is a software layer that enables multiple operating systems to run on a single physical host machine simultaneously, sharing the underlying physical hardware resources. The hypervisor manages the virtualized environment and provides a layer of abstraction between the physical hardware and the virtual machines running on top of it.
-
-The hypervisor creates and manages the virtual machines, each with its own virtual hardware, including CPU, RAM, storage, and network interfaces. Each virtual machine runs its own operating system, isolated from other virtual machines and the host operating system.
+Hypervisors allow multiple operating systems to run on the same physical computer at the same time, each in its own isolated virtual environment.
 
 There are two main types of hypervisors:
 
-- **Type 1**, native or bare-metal hypervisors run directly on the host machine's hardware without a separate operating system. Type 1 hypervisors are often used in data centers and server environments because they provide high levels of security and performance. Examples of type 1 hypervisors include VMware ESXi, Microsoft Hyper-V, and Citrix XenServer.
+1. **Type 1 (Bare-metal or native hypervisors)**
 
-- **Type 2**, or hosted hypervisors, run on top of a host operating system and are typically used on desktop or laptop computers. Type 2 hypervisors are less efficient than type 1 hypervisors because they require the host operating system to provide resources to the virtual machines. Examples of type 2 hypervisors include Oracle VirtualBox and VMware Workstation.
+   * Run directly on the physical hardware, without needing an existing operating system.
+   * They are faster and more secure, which is why they are often used in data centers and servers.
+   * Examples: VMware ESXi, Microsoft Hyper-V, Citrix XenServer and Proxmox.
 
-This lab will involve working with a type 1 hypervisor and virtual machines. Most of the labs in this class will build off each other. Please Don't delete your previous work and try not to fall behind. We will inform you when you no longer need an operating system. 
-<div style="page-break-after: always"></div>
+1. **Type 2 (Hosted hypervisors)**
+
+   * Run on top of an existing operating system, like Windows or Linux.
+   * Easier to set up for desktops or laptops but slightly slower than Type 1.
+   * Examples: Oracle VirtualBox, VMware Workstation.
+
+
+### Lab Note
+
+In this lab, you will be working with a **Type 1 hypervisor** and virtual machines. Most of the labs build on each other, so **do not delete your previous work** and try to stay up to date. You will be informed when an operating system is no longer needed.
+
 
 ## Lab Technologies
 
-After this lab, you will have installed or worked with
+By the end of this lab, you will have **installed or worked with** the following technologies:
 
-- Type 1 Hypervisor
-    - Proxmox VE  
+### Hypervisor
 
-- Operating Systems
-    - Windows 7
-    - Windows 10
-    - Windows 11
-    - Windows Server 2022 - GUI version
-    - Ubuntu Desktop 23.04 or 23.10
-    - Ubuntu Server 22.04
-    - Arch Linux
-    - Fedora Linux
+- **Proxmox* – A Type 1 hypervisor and virtualization management platform used in this lab and all future labs.
 
-<div style="page-break-after: always"></div>
+### Operating Systems
 
-# Instructions
-
-## Scenario
-You have just been hired as a Cybersecurity intern specializing in operating system management. Congratulations! Your first assignment is to set up a virtualized environment for play-testing common operating systems. Jim (your Boss) has already set up a Proxmox machine (type 1 hypervisor) for you to use. He wants you to create and deploy VMs of the OSs listed in step 2.
-
-### Step 1: Hypervisor login
-
-You should have received VPN credentials to access the network containing your Proxmox instance. It will be an OVPN file.
-To use the VPN credentials: 
-- First, download the OpenVPN client. 
-- Now, ensure that the GUI is open. It will appear as an icon in your toolbar.
-    <br/>
-    ![Windows openVpn Icon](./openVPN_Windows.png)
-    <br/>
-    
-    Figure 1 shows the toolbar OpenVPN client on Windows 
-
-- Next, import the provided OVPN file.
-- Now connect to the VPN
-    <br/>
-    ![Windows openVpn Connect](./openVPN_connect.png)
-    <br/>
-    Figure 2 Shows how to connect to the network
-
-- Finally, visit the website link sent with your VPN credentials. After Logging in you will be greeted by a pop-up `No valid subscription`.
- Ignore it and press ok. We are using the free license and do not need to subscribe.
-    <br/>
-    ![no Proxmox subscription needed](proxmox_no_valid_subscription.png)
-    <br/>
-    Figure 3 shows the pop-up you should ignore
-
-> Disclaimer: Do not change the root password and do not remove the SSH key. If you change or remove either of these, we cannot deploy VMs to your Proxmox in later labs.
-
-### Step 2: VMs
-
-VMs you need to install on Proxmox:
-
-- 1 x Windows 7
-- 1 x Windows 10
-- 1 x Windows 11
-- 1 x Windows Server 2022 - GUI version
-- 1 x Ubuntu Desktop 23.04 or 23.10
-- 1 x Ubuntu Server 22.04
-- 1 x Arch Linux
-- 1 x Fedora Linux
-
-We will provide you with most of the ISOs. You will have to find ISOs for Windows 10, Arch Linux, and Ubuntu Desktop. For your own sanity and safety use official sites.
-
-> Note: An ISO file is a binary image of a CD, DVD, or Blu-ray disc. They are commonly used as installation media since you can boot a VM and install an OS from an ISO file. The file appears like a physical drive to the virtual machine. For installing on a real computer, you can burn an ISO to a physical disc or copy it to a flash drive.
-> Note: You will want to create local users for all Windows machines 
-
-We will provide you with a range of IP addresses for your VMs. You will need to statically define the IP addresses of each VM to access the internet. Your subnet mask and default gateway will be as follows.
-
-Your Subnet mask: `255.255.248.0` 
-<br/>
-Your default gateway: `172.16.24.1`
-Your DNS : `172.16.24.1`
-
-> Hint: There is a way to install Windows 11 without internet
-
-Don't try running all these VMs simultaneously; it's unlikely your machine has the resources to do it, but make sure that each VM has the resources necessary to run without struggling.
-
-#### Screenshots
-For each OS take a screenshot of the OS information and the IP address of the device.
-    - For example in Windows open `System Info` and a PowerShell terminal to display your IP address.
-    - For the Ubuntu server run `lsb_release -a` and `ip a` 
-
-<div style="page-break-after: always"></div>
+You will have experience working with a variety of operating systems, including:
 
 
-### Step 3 - Write Up
-
-Answer the questions using one of the `Write Up` templates. Include all necessary screenshots.
-
-{% comment %}
-We use HTML here for the links because if you use MarkDown, then Jekyll will convert a link to a .md file into a link to a rendered .html file.
-{% endcomment %}
-* <a href="Lab-1-Write-Up.docx" download>Click here to download the write up template in MS Word .docx format</a>
-* <a href="Lab-1-Write-Up.md" download>Click here to download the write up template in MarkDown format</a>
-
-Regardless of which template you use, **Please submit your writeup in .pdf format!**
-
-There are many ways to convert from MarkDown to PDF including some online tools. Among the most convenient is the [yzane Markdown PDF Add-In for VS Code](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf).
-
-## Helpful links
+| **Category**   | **Technology / OS**          | **Notes**                                           |
+| -------------- | ---------------------------- | --------------------------------------------------- |
+| **Hypervisor** | Type 1 Hypervisor            | Runs virtual machines directly on physical hardware |
+|                | Proxmox VE                   | Type 1 hypervisor and virtualization platform       |
+| **Windows OS** | Windows 7                    | Older desktop version                               |
+|                | Windows 10                   | Modern desktop version                              |
+|                | Windows 11                   | Latest desktop version                              |
+|                | Windows Server 2022 (GUI)    | Server version with graphical interface             |
+| **Linux OS**   | Ubuntu Desktop 23.04 / 23.10 | Desktop Linux for general use                       |
+|                | Ubuntu Server 22.04          | Server-focused Linux                                |
+|                | Arch Linux                   | Lightweight, customizable Linux                     |
+|                | Fedora Linux                 | Cutting-edge Linux distribution                     |
 
 
-<div style="page-break-after: always"></div>
+## Instructions
 
-## Requirements
+Congratulations! You have just been hired as a **Cybersecurity Intern specializing in operating system management**.
 
-[ ] 10 Points - Installed a working VM running Windows 7  
-[ ] 10 Points - Installed a working VM running Windows 10  
-[ ] 10 Points - Installed a working VM running Windows 11 <br>
-[ ] 10 Points - Installed a working VM running Windows Server 2022 - GUI version  
-[ ] 10 Points - Installed a working VM running Ubuntu Desktop 23.04   
-[ ] 10 Points - Installed a working VM running Ubuntu Server 22.04  
-[ ] 10 Points - Installed a working VM running Arch Linux  
-[ ] 10 Points - Installed a working VM running Fedora Linux  
-[ ] 20 Points - Write up  
+Your first assignment is to set up a **virtualized environment** for play-testing common operating systems. Jim (your supervisor) has already prepared a **Proxmox machine (Type 1 hypervisor)** for you to use.
+
+Your task is to **create and deploy virtual machines (VMs)** of the operating systems listed in the lab technologies section.
+
+
+### Step 1: Hypervisor Login via VPN
+
+You should have received **VPN credentials** via your BYU email to access the network containing your Proxmox instance. These credentials are provided in an **OVPN file**.
+
+Follow these steps to connect:
+
+#### Installing OpenVPN
+
+1. **Download the OpenVPN Client**
+   - Go to [https://openvpn.net/client/](https://openvpn.net/client/) and download the **OpenVPN Connect** version.
+
+1. **Install the Client**
+   - Run the installer and follow the prompts. Allow any permissions requested.
+
+1. **Import the OVPN File**
+   - Open the OpenVPN client.
+   - Drag and drop the `.ovpn` file you received via email onto the application **or** click the **plus (+) button** at the bottom right, select **Upload File**, then browse to your `.ovpn` file and select it.
+
+1. **Connect to the VPN**
+    - Once the file is imported, click the **radio button** next to the profile to connect.
+
+
+#### Logging in to Proxmox
+
+1. **Open the Proxmox Web Interface**
+
+   * Visit the Proxmox URL provided in the email.
+   * Enter the **username** and **password** from the email.
+   * Set the **Realm** to: `Proxmox VE authentication server`.
+   * Click **Login**.
+
+2. **Handle the Subscription Pop-up**
+
+   * You may see a message saying:
+
+   ```
+   No valid subscription
+   ```
+
+   * This is normal; we are using the **free license**.
+   * Click **OK** to continue.
+
+
+
+### Step 2: Virtual Machines to Install on Proxmox
+
+
+You will need to create the following virtual machines (VMs) on Proxmox:
+
+| **OS**                        | **Notes**                                                                                                                                           |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Windows 7                     | Create a local user account.                                                                                                                        |
+| Windows 10                    | Download the ISO from the official Microsoft website; create a local user account.                                                                  |
+| Windows 11                    | Download the ISO from the official Microsoft website; create a local user account. Hint: You can install Windows 11 without an internet connection. |
+| Windows Server 2022 (GUI)     | Create a local administrator account.                                                                                                               |
+| Ubuntu Desktop 23.04 or 23.10 | Download the ISO from the official Ubuntu website.                                                                                                  |
+| Ubuntu Server 22.04           | ISO will be provided.                                                                                                                               |
+| Arch Linux                    | Download the ISO from the official Arch Linux website.                                                                                              |
+| Fedora Linux                  | ISO will be provided.                                                                                                                               |
+
+### ISO Files
+
+* An **ISO file** is a binary image of a CD, DVD, or Blu-ray disc.
+* It can be used as installation media for a VM, appearing to the VM as a physical drive.
+* For real computers, an ISO can be burned to a disc or copied to a USB drive.
+* **Tip:** Always download ISO files from official sources to ensure safety and authenticity.
+
+**Important:** When uploading ISOs to Proxmox:
+
+* Use the **“Download from URL”** option whenever possible. It will be much faster than trying to upload them from your computer over the VPN.
+* Make sure to store the ISOs in the **Labs** storage, **not the LVM**.
+* If the LVM fills up, the Proxmox instance will crash.
+
+### Network Configuration
+
+You will be provided with a range of IP addresses for your VMs. **Each VM must have a static IP** to access the network. Use the following network settings:
+
+* **Subnet mask:** 255.255.248.0
+* **Default gateway:** 172.16.24.1
+* **DNS server:** 172.16.24.1
+
+### Resource Management
+
+* Do **not** run all VMs simultaneously; your machine likely does not have enough resources.
+* Allocate sufficient CPU, RAM, and storage to each VM to ensure smooth operation.
+
+### Screenshots for Documentation
+
+For each VM, take screenshots of:
+
+1. **Operating system information**
+    - **Windows:** Open **System Info**.
+    - **Ubuntu Server / Linux:** Run `lsb_release -a`.
+
+1. **IP address**
+    - **Windows:** Open a PowerShell terminal and run `ipconfig`.
+    - **Ubuntu / Linux:** Run `ip a`.
+
+1. **Internet Test**
+    - Run `ping google.com`
+    - Verify that you receive reply responses (not timeouts or errors)
+
+These screenshots will serve as evidence that the VM was successfully installed and networked correctly.
+
+### Step 3 – Write Up
+
+You must complete a **write-up** of your work using the provided template. The write-up should include:
+
+- **Answers to all questions**
+- **Screenshots for each of the following showing the OS and network information as well as a connectivity test:**
+   1. Windows 7                       
+   1. Windows 10                      
+   1. Windows 11                      
+   1. Windows Server 2022 (GUI version)
+   1. Ubuntu Desktop 23.04            
+   1. Ubuntu Server 22.04             
+   1. Arch Linux                      
+   1. Fedora Linux                    
+
+#### Templates
+
+- [Download the MS Word Write-Up Template (.docx)](Lab-1-writeup-template.docx){: download}
+- [Download the Markdown Write-Up Template (.md)](Lab-1-writeup-template.md){: download}
+
+
+### Requirements and Points
+
+| **Task**                                                             | **Points** |
+| -------------------------------------------------------------------- | ---------- |
+| Installed a working VM running **Windows 7**                         | 10         |
+| Installed a working VM running **Windows 10**                        | 10         |
+| Installed a working VM running **Windows 11**                        | 10         |
+| Installed a working VM running **Windows Server 2022 (GUI version)** | 10         |
+| Installed a working VM running **Ubuntu Desktop 23.04**              | 10         |
+| Installed a working VM running **Ubuntu Server 22.04**               | 10         |
+| Installed a working VM running **Arch Linux**                        | 10         |
+| Installed a working VM running **Fedora Linux**                      | 10         |
+| Completed the **Write-Up**                                           | 20         |
+
 
 ## Submission
-Create a single PDF from one of the given `Write Up` templates that contains your written report and images showing that each requirement has been met. Upload the **PDF** to Learning Suite. *No other file format will be accepted.*
+Create a single PDF from the given `Write Up` file that contains your written report and screenshots showing that each requirement has been met. Upload the PDF to Learning Suite. Any other file format will not be accepted.
 
-* If you use the .docx template, edit your writeup in Microsoft Word or Google Docs and use the **export to .PDF function.**
-* If you use the MarkDown template, the [Markdown PDF VS Code add-in](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf) is among the better options. Regardless, make sure the method you use includes your images.
+There are many ways to convert from MarkDown to PDF including some online tools. Among the most convenient is the [yzane Markdown PDF Add-In for VS Code](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf).
