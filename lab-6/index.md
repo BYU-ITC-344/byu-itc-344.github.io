@@ -1,8 +1,8 @@
 ---
-title: Lab 6 Vulnerability Scanning & Metasploitable
+title: Lab 6: Vulnerability Scanning and Metasploitable
 ---
 
-# Lab 6 - Vulnerability Scanning & Metasploitable
+# Lab 6: Vulnerability Scanning and Metasploitable
 
 ## Overview
 
@@ -22,21 +22,9 @@ After this lab, you will have worked with:
 - OpenVAS
 - Metasploitable
 
-<div style="page-break-after: always"></div>
-
 ## Instructions
 
-### Step 1: Sync openVAS Database
-
-To ensure your OpenVMS installation is up-to-date with the latest vulnerability information, you need to synchronize the openVAS database with the Greenbone Community Feed. This can be done using the `greenbone-feed-sync` command. On your openVAS VM open a terminal and execute the following command:
-
-```sh
-sudo greenbone-feed-sync --type scap
-```
-
-This command will initiate the synchronization process, downloading the most recent vulnerability data and integrating it into your local openVAS database. Keeping your database current is crucial for accurate and effective vulnerability assessments.
-
-### Step 2: Create a host-only network
+### Step 1: Create a host-only network
 
 Due to the vulnerable nature of the Metasploitable machine, it will be hosted on a host-only network so it cannot reach the internet. Creating a host-only network in Proxmox involves setting up a virtual network that allows communication between VMs and the Proxmox host but not with external networks. 
 
@@ -56,20 +44,33 @@ Due to the vulnerable nature of the Metasploitable machine, it will be hosted on
 Make sure both the openVAS and Metasploitable VMs are now on the `vmbr1` bridge. You will have to manually set the IP addresses for each machine since there is no DHCP server. Set the IPs in the 192.168.0.0/16 range and make sure they can ping each other. 
 
 
-### Step 3: Scanning Metasploitable 2
+### Step 2: Scanning Metasploitable 2
 
 This [guide](https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-openvas-9-0-part-2/) will walk you through how to scan a machine and view the results. The scan will take a while so it is recommended you start it and come back to it later. 
 
-### Step 4: Remediation
+### Step 3: Remediation
 
-After completing the initial scan, choose and fix 5 critical problems (9.0 - 10.0 on the CVSS scale). Some issues may not be within your power to fix. You may have to look at more than five vulnerabilities to find five that are fixable. If a single remediation fixes more than one CVE it will still be counted as just one CVE. You are also not permitted to just turn on the firewall and count it as being remediated. After you have completed your remediation steps rescan the machine to make sure the problem has been fixed. Take another screenshot of the newly completed scan.
+After completing the **initial vulnerability scan**, identify and select **five critical vulnerabilities** with a **CVSS score between 9.0 and 10.0**. Note that some issues may not be within your control or permission to fix. You may need to review **more than five vulnerabilities** to identify five that are **remediable**.
 
-### Step 6: Write up
+**Important guidelines:**
 
-Answer the questions in the `Write up` file and include the needed screenshots
-* [Click here to download the write up template in MS Word .docx format](Lab-6-writeup-template.docx){: download}
-* <a href="Lab-6-writeup-template.md" download>Click here to download the write up template in MarkDown format</a>.
- 
+1. If a **single remediation** addresses multiple CVEs, it will **count as only one** vulnerability.
+1. You **cannot** simply enable the firewall and claim the issue is resolved; the remediation must directly address the underlying vulnerability.
+1. Document your remediation steps clearly, including commands, configuration changes, or updates applied.
+
+### Step 4: Write up
+
+You must complete a **write-up** of your work using the provided template. The write-up should include:
+
+- Answers to all questions
+- Screenshots showing the before and after results of the OpenVAS scans
+
+
+#### Templates
+
+- [Download the MS Word Write-Up Template (.docx)](Lab-6-writeup-template.docx){: download}
+- [Download the Markdown Write-Up Template (.md)](Lab-6-writeup-template.md){: download}
+
 
 ## Helpful links  
 
@@ -77,13 +78,15 @@ Answer the questions in the `Write up` file and include the needed screenshots
 
 <div style="page-break-after: always"></div>
 
-## Requirements
+### Grading Breakdown (100 Points Total)
 
-[ ] 10 Points - OpenVAS feeds have been synced  
-[ ] 10 Points - Metasploitable 2 has been scanned  
-[ ] 40 Points - 5 critical problems (9.0 - 10.0 on the CVSS scale) have been fixed  
-[ ] 40 Points - Write up  
+
+| **Task**                             | **Points** |
+| ------------------------------------ | ---------- |
+| Metasploitable 2 has been scanned    | 20         |
+| 5 critical problems have been fixed  | 40         |
+| Write-Up Questions                   | 40         |             
+
 
 ## Submission
 Create a single PDF from the given `Write Up` file that contains your written report and screenshots showing that each requirement has been met. Upload the PDF to Learning Suite. Any other file format will not be accepted.
-
