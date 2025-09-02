@@ -93,7 +93,7 @@ Follow these steps to connect:
 #### Installing OpenVPN
 
 1. **Download the OpenVPN Client**
-   - Go to [https://openvpn.net/client/](https://openvpn.net/client/) and download the **OpenVPN Connect** version.
+   - Go to <a href="https://openvpn.net/client/" target="_blank">https://openvpn.net/client/</a> and download the **OpenVPN Connect** version.
 
 1. **Install the Client**
    - Run the installer and follow the prompts. Allow any permissions requested.
@@ -201,8 +201,8 @@ You must complete a **write-up** of your work using the provided template. The w
 
 #### Templates
 
-- [Download the MS Word Write-Up Template (.docx)](Lab-1-writeup-template.docx){: download}
-- [Download the Markdown Write-Up Template (.md)](Lab-1-writeup-template.md){: download}
+- <a href="Lab-1-writeup-template.docx" download>Download the MS Word Write-Up Template (.docx)</a>
+- <a href="Lab-1-writeup-template.md" download>Download the Markdown Write-Up Template (.md)</a>
 
 
 ### Requirements and Points
@@ -221,4 +221,5 @@ You must complete a **write-up** of your work using the provided template. The w
 ## Submission
 Create a single PDF from the given `Write Up` file that contains your written report and screenshots showing that each requirement has been met. Upload the PDF to Learning Suite. Any other file format will not be accepted.
 
-There are many ways to convert from MarkDown to PDF including some online tools. Among the most convenient is the [yzane Markdown PDF Add-In for VS Code](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf).
+There are many ways to convert from MarkDown to PDF including some online tools. Among the most convenient is the <a href="https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf" target="_blank">yzane Markdown PDF Add-In for VS Code</a>
+.
