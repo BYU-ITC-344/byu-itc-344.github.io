@@ -9,7 +9,7 @@ The *Bandit Wargame* from OverTheWire introduces students to foundational Linux 
 
 ## Assignment Instructions
 
-1. Access the Bandit Wargame here: [OverTheWire Bandit](https://overthewire.org/wargames/bandit/).
+1. Access the Bandit Wargame here: <a href="https://overthewire.org/wargames/bandit/" target="_blank">OverTheWire Bandit</a>
 2. Start at **Level 0** and complete each challenge in sequence up to **Level 16**.
 3. Successfully log into **Level 17** to prove completion.
 
@@ -36,12 +36,8 @@ The *Bandit Wargame* from OverTheWire introduces students to foundational Linux 
 | Level 9 → Level 10  | 5 pts      |
 | Level 10 → Level 11 | 5 pts      |
 | Level 11 → Level 12 | 5 pts      |
-| Level 12 → Level 13 | 10 pts      |
-| Level 13 → Level 14 | 10 pts      |
-| Level 14 → Level 15 | 10 pts      |
-| Level 15 → Level 16 | 10 pts      |
+| Level 12 → Level 13 | 10 pts     |
+| Level 13 → Level 14 | 10 pts     |
+| Level 14 → Level 15 | 10 pts     |
+| Level 15 → Level 16 | 10 pts     |
 | Level 16 → Level 17 | 15 pts     |
-
-**Total: 100 points**
-
-* Each level’s points are awarded only if you reach the next level.
