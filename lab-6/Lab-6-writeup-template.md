@@ -1,6 +1,6 @@
-# Questions
+# Lab 6: Vulnerability Scanning and Metasploitable
 
-For each vulnerability you fixed give the following information:
+For each vulnerability you fixed, give the following information:
 
 1.	CVE number(s)
 2.	Severity Rating
@@ -10,9 +10,7 @@ For each vulnerability you fixed give the following information:
 
 # Screenshots
 
-## OpenVAS feeds have been synced
 
-
-## Metasploitable 2 has been scanned
+## Metasploitable 2 Scan – Pre Remediation 
 
 ## Metasploitable 2 After Remediations
