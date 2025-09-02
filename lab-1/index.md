@@ -201,8 +201,8 @@ You must complete a **write-up** of your work using the provided template. The w
 
 #### Templates
 
-- <a href="Lab-1-writeup-template.docx" download>Download the MS Word Write-Up Template (.docx)</a>
-- <a href="Lab-1-writeup-template.md" download>Download the Markdown Write-Up Template (.md)</a>
+- <a href="lab-1-writeup-template.docx" download>Download the MS Word Write-Up Template (.docx)</a>
+- <a href="lab-1-writeup-template.md" download>Download the Markdown Write-Up Template (.md)</a>
 
 
 ### Requirements and Points
