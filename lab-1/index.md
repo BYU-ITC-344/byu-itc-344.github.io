@@ -7,9 +7,7 @@ title: Lab 1 - Hypervisors & Operating Systems
 
 Welcome to the first lab of IT&C 344!
 
-As the only significant assignments in this class apart from the final project, labs are designed to take several
-hours to complete, and as such, they should not be left to the last minute to do. You should expect to work on
-each lab for 10 -15 hours (5-6+ hours a week). Procrastinate these labs at your own risk!
+Labs are designed to take several hours to complete, and as such, they should not be left to the last minute to do. You should expect to work on each lab for 10-15 hours (5-6+ hours a week). Procrastinate these labs at your own risk!
 
 The labs outline your objectives and give some instructions on how to proceed. However, most of the how-todo will come from your research and diligence. You must practice your research and problem-solving skills as you would when working in IT and Cybersecurity. The labs are designed to be a beneficial learning experience, but if you cannot find a solution after working on the problem by yourself for a significant amount of time and putting in genuine effort, the TAs are there to assist you.
 
