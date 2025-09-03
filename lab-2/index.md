@@ -7,15 +7,15 @@ title: Lab 2 - Containers
 
 You have already had some exposure to virtualization in the last lab. This lab aims to strengthen your understanding of containerization. In this lab you will learn about two forms of containerization: operating system containers, and application containers.
 
-#### Containers
+### Containers
 
 As a review, A container virtualizes the operating system but does not virualize hardware. It shares the kernel of the host. Containers are smaller and lighter-weight than VMs, and they can start up faster and use fewer system resources. Multiple containers can run on the same host system, and each container shares the host's operating system kernel.
 
-#### Operating System Containers
+### Operating System Containers
 
 Operating system containers allow another operating system to use the host kernel. These kind of containers are general purpose, meaning you can interact with them like you would a regular OS. They come with a file system and terminal. LXC containers are open source linux containers. The templates to create LXC containers are included in most Linux distros.
 
-#### Application Containers
+### Application Containers
 
 Application containers like Docker are designed to virtualize services for particular applications. Application containers include an operating system, but the OS is only a vehicle for the intended application. Application containers are valuable because they make a service avaliable and portable. 
 
@@ -33,140 +33,208 @@ After this lab, you will have worked installed or worked with
 
 <div style="page-break-after: always"></div>
 
-# Instructions
+## Instructions
 
-## Senario 
-Your boss tells you the web dev team has come up with a new website. They believe it is ready for deployment but want feedback from other parts of the company. In production the company deploys websites via Docker images on a VM. Your boss want you to set up a new low-weight testing environment in proxmox for the website. He wants you to build a LXC container. The site itself should be secure but as a precaution he wants you to ensure that you create an unprivileged LXC container. He also wants you to build the docker image and document the process. The company lost their last employee fluent in Docker.
+Your supervisor has asked you to prepare a lightweight **testing environment in Proxmox** for the company’s new website. In production, websites are deployed as Docker images. For this testing phase, however, you are expected to:
 
-Before leaving, you boss sends you a document the last Docker guy left.
+1. **Set up an unprivileged LXC container** in Proxmox (for added security).
+1. **Install Docker** inside the container.
+1. **Build a Docker image** for the new website.
+1. **Document the process** so that other team members can follow it in the future.
 
-{::options parse_block_html="true" /}
+The development team has provided you with the **website source code** (see: <a href="lab2SiteSource.zip" download>Lab2SiteSource.zip</a>) and noted that the application requires the Python libraries **Flask** and **python-dotenv**.
 
-<div style="border: 1px solid #808080; margin: 1em; padding: 0.5em;" markdown="1">
 
-Understanding Fundamentals of Docker
+## Reference Material
 
-Docker is a useful tool that allows the deployement of webservers and other services in a way that is portable.
-It's amazing but the general organization of images, containers, Dockerfiles, and docker-compose.yaml files can be confusing. This document aims to clarify the general structure and use of the previously mentioned items.
+Before departing, the previous Docker engineer left the following guidance:
 
-Docker containers are the goal. Containers are live implementation of a service on a contained OS. They can be created, stopped, started, or deleted. 
+> ### Understanding the Fundamentals of Docker
+>
+> Docker is a platform for packaging and deploying web servers and other services in a **portable and reproducible** way.
+>
+> - **Docker Containers** are the end goal. They are running instances of services, isolated within a lightweight operating system environment. Containers can be created, started, stopped, or deleted.
+> - **Docker Images** are templates used to create containers. Images define the base OS and tools available inside the container. Many prebuilt images are hosted on <a href="https://hub.docker.com" target="_blank">Docker Hub</a>, where you can also upload your own.
+> - **Dockerfiles** allow you to build custom images. They define the base image, installed software, configurations, and any commands that need to be executed.
+> - **Docker Compose files (YAML)** provide a way to manage multi-container applications. They can define how images are built (using Dockerfiles), configure services, and control deployment without long command-line arguments.
 
-Docker images are the templates to create Docker containers. The image contains information for a future container. It contains details of the OS to use and the tools avaiable to it. There are many preconfigured Docker images that you can use as a basis for projects. They are avaliable on Dockerhub. Dockerhub is a site that you can pull images from and upload your own images for later deployment.
+This document will serve as a reference as you build the image for the new site.
 
-A Dockerfile is useful for building a custom image. In a dockerfile you have the ability to choose a base operating system, install tools and applications, and execute commands on the OS to further configure settings.  
+## Deliverables
 
-Docker compose files use yaml to manipulate Docker images to create and destroy docker containers. They are an easy alternative to commandline arguments.
-Compose files can also use Dockerfiles to create Docker images.
+1. A functioning **unprivileged LXC container** in Proxmox running Docker.
+1. A **Docker image** containing the provided website source code with Flask and dotenv installed.
+1. Documentation of the steps taken to build and deploy the image.
 
-</div>
-
-Your boss also emails you a link to the source code to the website which uses Python as the host. [This is the link to the source code.](Lab2SiteSource.zip)
-
-The web dev team also left you a note that the only non-standard dependencies needed for the python server to run are flask and dotenv.
 
 ### Step 1: Install a Linux Container on Proxmox
 
-Read offical documentation on proxmox containers [here](https://pve.proxmox.com/wiki/Linux_Container#pct_container_images).
-Proxmox has access to LXC templates. You may use the command line or GUI to install one of your choosing.
+Proxmox supports **LXC containers**, which you can install directly from available templates. Review the <a href="https://pve.proxmox.com/wiki/Linux_Container#pct_container_images" target="_blank">official Proxmox LXC documentation</a> before starting.
 
-- First, install a VM template. Choose from the ones already on your Proxmox VM.
-- Next, create a new LXC container (CT).
-- Now, install Docker. 
-    There are a few different packages for docker depending on the operating system you choose.
-    Review these two sites to help you decide which to use.
+#### Instructions
 
-    https://octopus.com/blog/difference-between-docker-versions#:~:text=The%20docker.io%20and%20docker,a%20package%20provided%20by%20Docker.
-    
-    https://superuser.com/questions/784258/whats-the-difference-between-docker-io-and-docker
+1. **Download a Container Template**
 
-- Finally, test that docker is working and take a screenshot with the ip address and result.
-    Enter the following command to test if docker is working.
-    ```sh
+   - In the Proxmox web GUI, go to `Labs > CT Templates > Templates`
+   - Select and download the container template of your choice.
+
+1. **Create the Container**
+
+   - Use the downloaded template to create a new LXC container.
+   - Use an `Unprivileged container`
+   - Configure basic settings (hostname, resources, network).
+
+1. **Install Docker**
+
+   - Once the container is running, install Docker inside it.
+   - The exact package depends on your chosen operating system. Refer to the following resources for guidance:
+      - <a href="https://octopus.com/blog/difference-between-docker-versions#:~:text=The%20docker.io%20and%20docker,a%20package%20provided%20by%20Docker" target="_blank">Difference between docker.io and docker-ce</a>
+      - <a href="https://superuser.com/questions/784258/whats-the-difference-between-docker-io-and-docker" target="_blank">SuperUser: Difference between docker.io and docker</a>
+
+
+1. **Test Docker**
+
+   - Run the following command to confirm Docker is installed and working:
+
+     ```sh
      docker run hello-world
      ```
-    You may also run the following command to run an apache2 server on port 80.
-    ```sh
-    docker run -d  --name my-apache-app -p 80:80 -d httpd:latest
-    ```
 
-<div style="page-break-after: always"></div>
+   - Optionally, test by running an Apache server on port 80:
+
+     ```sh
+     docker run -d --name my-apache-app -p 80:80 httpd:latest
+     ```
 
 ### Step 2: Create a Docker Container
-There are a few different ways to create docker images, many of them are difficult but this guide will help you. It contains a similar process that we will follow. https://docs.docker.com/compose/gettingstarted/
 
-Tips:
-- The terminal is your best friend
-- Remember that your website will run on `HTTP`, not `HTTPS`
-- You can specify which port number the container will use
-- Sudo permissions may be required to run Docker commands
-- Ensure you take notes on how to make a Docker container from steps 2.2 - 2-4
-- If you build a container on MacOS then it will use the ARM64 architecture. So make sure you build your container image on your VM so that it uses x86-64 architecture.
+This step will be done on your **personal machine** before moving back into the Proxmox environment. You’ll build and run a Docker container for a simple website, then upload it to DockerHub for use in your LXC container.
 
-### Step 2.1 - Installation
-Configure your local machine as a development environment. On your local machine install Docker Desktop.
- After installation make sure you can run hello-world.
+For reference, review the official Docker <a href="https://docs.docker.com/compose/gettingstarted/" target="_blank">Getting Started with Compose Guide</a>.
 
-```sh
-docker run hello-world
-```
+#### General Tips
 
-### Step 2.2 - Create a Dockerfile
-Take a look at this [guide](https://docs.docker.com/compose/gettingstarted/). It will help you and includes a good example to work from. Remember to check the specs the web development team gave you. Take a screenshot of your finished Dockerfile.
+- The **terminal** is your best friend.
+- Your website will run on **HTTP**, not HTTPS.
+- You can specify which **port** your container uses.
+- Some commands may require **sudo** privileges.
+- Take **notes** on your process (Steps 2.2 – 2.4).
+- On **macOS**, Docker Desktop builds images with **ARM64 architecture**. For compatibility, build your final container on a **VM (x86-64)**.
+
+### Step 2.1 – Install Docker
+
+1. Install **Docker Desktop** on your local machine.
+1. Verify your installation by running:
+
+   ```sh
+   docker run hello-world
+   ```
+### Step 2.2 – Create a Dockerfile
+
+1. Create a `Dockerfile` for your project.
+1. Use the [Compose Getting Started Guide](https://docs.docker.com/compose/gettingstarted/) as a reference.
+1. Adapt the example to meet the **specifications from your web development team**.
+
+### Step 2.3 – Build an Image from the Dockerfile
+
+1. Use Docker commands to build your image
+1. Verify the image exists
+
+### Step 2.4 – Create and Run a Container from Your Image
+
+1. Run your container using either:
+
+   - **Docker CLI** (`docker run`)
+   - or a **Docker Compose file** (`docker-compose up`)
+
+1. Verify that:
+
+   - The container is running in **Docker Desktop**
+   - The website is accessible in your **browser**
+
+1. Take a screenshot showing both:
+
+   - Docker Desktop with the columns `Name`, `Image`, `Status`, `Port(s)`
+   - Your browser displaying the running website with the **port number** visible
+
+   Example:
+   ![working-image-and-container](example.png){: style="display: block; width: 90%; margin: 0 auto; padding: 0.5em; border: 1px solid #808080;" }
 
 
-### Step 2.3 - Create Image with Dockerfile
-Look up the docker commands for this.
+### Step 3 – Upload Your Image to DockerHub
 
-### Step 2.4 - Create Container from Image
-Create the Container for your new image. You can do this using docker commands or using a Docker-Compose file. Test to make sure that your container runs properly and you are able to visit the website.
-<br/>
+1. Create a **DockerHub account** (if you don’t already have one).
+1. Tag and push your image to DockerHub:
 
-Take a screenshot with DockerDesktop on one side of the screen and your website on the other. The DockerDesktop side should show the columns `Name`, `Image`, `Status`, `Port(s)`. The broswer should show the port number. The following is an example.
+   ```sh
+   docker tag my-web-image username/my-web-image
+   docker push username/my-web-image
+   ```
+1. Take a screenshot of your image as it appears on **DockerHub**.
 
-![working-image-and-container](example.png){: style="display: block; width: 90%; margin: 0 auto; padding 0.5em; border: 1px solid #808080;"}
 
-### Step 3 - Upload Your Image to DockerHub
-You will have to create an account then upload your image. Take a screenshot of your image in Dockerhub.
+### Step 4 – Pull Your Image and Run It in the Linux Container
 
-### Step 4 - Pull Down Docker Image and Create Container in Your Linux Container
-You can pull down the Docker Image and create a container in the commandline or use a Docker-Compose file.
-If you created a compose file in step 2.4 you should be able to reuse it.
-Take a screenshot of the running container and the website pulled up on a browser.
+1. In your **Proxmox LXC container**, pull down the image:
+1. Run the container 
+1. Verify the container is running and accessible.
+    - You will need to use one of your VMs with a GUI from lab 1 to verify this
 
-### Step 5 - Write Up
 
-Answer the questions using the `Write Up` template provided and include all necessary screenshots. There should only be one screenshot for each title in the document.
+### Step 5 – Write Up
 
-* [Click here to download the write up template in MS Word .docx format](Lab-2-writeup-template.docx){: download}
-* <a href="Lab-2-writeup-template.md" download>Click here to download the write up template in MarkDown format</a>.
+You must complete a **write-up** of your work using the provided template. The write-up should include:
 
-Regardless of which template you use, **Please submit your writeup in .pdf format!**
+- **Answers to all questions**
+- **Screenshots for each of the following:**
+  1. A running LXC with network information displayed (Step 1)
+  1. A running LXC with the `hello-world` Docker container running (Step 1)
+  1. Docker Desktop installed on your computer (Step 2.1)
+  1. The Dockerfile used in Step 2.2
+  1. The commands you used to create and verify the Docker image (Step 2.3)
+  1. The Docker image running in Docker Desktop (Step 2.4)
+  1. Your website accessible in a browser (Step 2.4)
+  1. The Docker image uploaded to DockerHub (Step 3)
+  1. Pulling down your Docker image on the LXC container (Step 4)
+  1. Running your container in the LXC container (Step 4)
+  1. Your container working in a browser from the LXC container (Step 4)
 
-There are many ways to convert from MarkDown to PDF including some online tools. Among the most convenient is the [yzane Markdown PDF Add-In for VS Code](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf).
+#### Templates
+
+- <a href="lab-2-writeup-template.docx)" download>Download the MS Word Write-Up Template (.docx)</a>
+- <a href="lab-2-writeup-template.mdp" download>Download the Markdown Write-Up Template (.md)</a>
 
 ## Helpful links
 
-[Creating and managing a Docker Image](https://www.dataset.com/blog/create-docker-image/)
-<br/>
+<a href="https://www.dataset.com/blog/create-docker-image/" target="_blank">Creating and managing a Docker Image</a>
 
-[Contains information on how to use a Dockerfile](https://docs.docker.com/get-started/02_our_app/)
+<a href="https://docs.docker.com/get-started/02_our_app/" target="_blank">Contains information on how to use a Dockerfile</a>
 
-[Dockerfile syntax and best practices](https://docs.docker.com/develop/develop-images/dockerfile_best-practices/)
+<a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/" target="_blank">Dockerfile syntax and best practices</a>
 
-[How docker compose can be used to create a docker image and information on how to create a Dockerfile](https://docs.docker.com/compose/gettingstarted/)
+<a href="https://docs.docker.com/compose/gettingstarted/" target="_blank">How docker compose can be used to create a docker image and information on how to create a Dockerfile</a>
 
 
-<div style="page-break-after: always"></div>
+### Requirements and Points
 
-## Requirements
-[ ] 10 Points - Install a LXC   
-[ ] 20 Points - Create working docker image     
-[ ] 20 Points - Docker image uploaded to DockerHub  
-[ ] 20 Points - Webserver docker image runs on LXC  
-[ ] 30 Points - Writeup
+### Grading Breakdown (100 Points Total)
+
+
+| **Task**                                                               | **Points** |
+| ---------------------------------------------------------------------- | ---------- |
+| A running LXC with network information displayed (Step 1)              | 10         |
+| A running LXC with the `hello-world` Docker container running (Step 1) | 5          |
+| Docker Desktop installed on your computer (Step 2.1)                   | 10         |
+| A working Dockerfile                                                   | 10         |
+| The commands you used to create and verify the Docker image (Step 2.3) | 5          |
+| The Docker image running in Docker Desktop (Step 2.4)                  | 10         |
+| Your website accessible in a browser (Step 2.4)                        | 5          |
+| The Docker image uploaded to DockerHub (Step 3)                        | 10         |
+| Pulling down your Docker image on the LXC container (Step 4)           | 5          |
+| Running your container in the LXC container (Step 4)                   | 5          |
+| Your container working in a browser from the LXC container (Step 4)    | 5          |
+| Write-Up Questions                                                     | 20         |
+
 
 ## Submission
-Create a single PDF from one of the given `Write Up` templates that contains your written report and images showing that each requirement has been met. Upload the **PDF** to Learning Suite. *No other file format will be accepted.*
-
-* If you use the .docx template, edit your writeup in Microsoft Word or Google Docs and use the **export to .PDF function.**
-* If you use the MarkDown template, the [Markdown PDF VS Code add-in](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf) is among the better options. Regardless, make sure the method you use includes your images.
+Create a single PDF from the given `Write Up` file that contains your written report and screenshots showing that each requirement has been met. Upload the PDF to Learning Suite. Any other file format will not be accepted.
