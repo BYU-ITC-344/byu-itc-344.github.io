@@ -132,7 +132,7 @@ For reference, review the official Docker <a href="https://docs.docker.com/compo
 ### Step 2.2 – Create a Dockerfile
 
 1. Create a `Dockerfile` for your project.
-1. Use the [Compose Getting Started Guide](https://docs.docker.com/compose/gettingstarted/) as a reference.
+1. Use the <a href="https://docs.docker.com/compose/gettingstarted/" target="_blank">Compose Getting Started Guide</a> as a reference.
 1. Adapt the example to meet the **specifications from your web development team**.
 
 ### Step 2.3 – Build an Image from the Dockerfile
