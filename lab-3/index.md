@@ -55,7 +55,7 @@ The troll tampers with critical system files, allowing illegitimate users access
 1. **Restore home directories:**  
    - Illegitimate users’ files must be removed.  
    - Legitimate user files that the troll tampers with must be restored from backups.  
-   - Use the provided `files.zip` archive to restore original contents under `/home`.  
+   - Use the provided <a href="Files part 1.zip" download>Files Part 1.zip</a> and <a href="Files part 2.zip" download>Files Part 2.zip</a>  archive to restore original contents under `/home`.  
 
 1. **Integrity checks:**  
    - The system will be scored every **2-5 seconds**.  
@@ -86,7 +86,7 @@ You must complete a **write-up** of your work using the provided template. The w
 
 #### Templates
 
-- <a href="lab-3-writeup-template.docx)" download>Download the MS Word Write-Up Template (.docx)</a>
+- <a href="lab-3-writeup-template.docx" download>Download the MS Word Write-Up Template (.docx)</a>
 - <a href="lab-3-writeup-template.mdp" download>Download the Markdown Write-Up Template (.md)</a>
 
 

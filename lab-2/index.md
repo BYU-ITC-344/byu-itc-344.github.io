@@ -236,5 +236,5 @@ You must complete a **write-up** of your work using the provided template. The w
 | Write-Up Questions                                                     | 20         |
 
 
-## Submission
+### Submission
 Create a single PDF from the given `Write Up` file that contains your written report and screenshots showing that each requirement has been met. Upload the PDF to Learning Suite. Any other file format will not be accepted.
