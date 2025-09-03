@@ -1,89 +1,107 @@
 ---
 title: Lab3 Backups and Integrity Checking
 ---
+
 # Lab 3 - Backups and Integrity Checking
  
-## Overview
+## Introduction
  
 Backups are essential to data management and can be critical in preventing data loss, whether due to a hardware failure, accidental deletion, or a malicious attack. Backing up your data ensures that you can restore your important files and data in case of such events, minimizing the impact of any data loss or breaches.  
  
 Without backups, data loss can have serious consequences, especially in a business or organizational context where critical data and information may be lost, resulting in financial losses, legal liabilities, and reputational damage.  
 
-In addition to providing a safety net in case of data loss, backups can also help in disaster recovery and continuity planning. In the event of a disaster such as a fire, flood, or another natural disaster, having backups can help organizations quickly restore their operations and minimize the impact of the disaster. 
- 
-<div style="page-break-after: always"></div>
+In addition to providing a safety net in case of data loss, backups also play a central role in **disaster recovery and continuity planning**. In the event of a disaster such as a fire, flood, ransomware attack, or another large-scale disruption, having backups can help organizations quickly restore their operations and minimize the impact of the disaster.  
+
 
 ## Instructions
 
-### Step 1: Chose A Solution
- 
-Many backup solutions are available to use. Some of which are listed below, choose one that would best meet the needs of this lab and implement it.
- 
-Note: Some of these will not be suitable for the lab they are just examples. It will be up to you to find and implement a suitable solution.
+### Step 1: Choose a Backup Solution
+Many backup solutions are available. Below are several examples. Choose one that best meets the needs of this lab and implement it.  
 
-**Duplicati:** Duplicati is a free and open-source backup software that works on Windows, Linux, and macOS. It supports various storage providers such as local storage, FTP, SFTP, Amazon S3, Google Drive, and more. It offers encryption and deduplication features to optimize backup storage.  
+> **Note:** Some of these may not be fully suitable for the lab environment; it is your responsibility to research and determine which solution works best.
 
- 
-**Bacula:** Bacula is a network backup solution that supports Windows, Linux, and other Unix-like systems. It provides features like backup scheduling, data encryption, client-server architecture, and flexible storage options. Bacula is designed for enterprise-level backup needs.  
- 
+- **Duplicati:** Free and open-source backup software (Windows, Linux, macOS). Supports many storage providers (local, FTP/SFTP, Amazon S3, Google Drive, etc.). Offers encryption and deduplication.  
+- **Bacula:** Enterprise-level network backup solution with scheduling, encryption, and client-server architecture. Supports Windows, Linux, and Unix-like systems.  
+- **Amanda:** Open-source backup solution supporting full, incremental, and differential backups with a client-server architecture. Works across multiple OS platforms.  
+- **rsync:** A file synchronization tool often used for incremental backups. Works across Linux and Windows (via cwRsync or DeltaCopy). Lightweight but highly efficient.  
+- **Clonezilla:** Disk imaging and cloning tool, suitable for full system or partition backups. Restores systems to exact previous states.  
 
-**Amanda:** Amanda (Advanced Maryland Automatic Network Disk Archiver) is an open-source backup solution that works on Windows, Linux, and Unix-like systems. It supports various backup methods like full, incremental, and differential backups. Amanda also offers a client-server architecture and supports tape storage.  
- 
+When selecting a solution, consider **encryption, storage location, restore reliability, and scalability**.  
 
-**rsync:** While not a dedicated backup solution, rsync is a powerful file synchronization tool that can be used for backup purposes. It works on both Windows (using tools like cwRsync or DeltaCopy) and Linux. Rsync efficiently copies and synchronizes files between different locations and supports features like incremental backups and compression.  
- 
 
-**Clonezilla:** Clonezilla is an open-source disk imaging and cloning tool that can be used for both backup and recovery purposes. It works on Windows and Linux and supports various file systems. Clonezilla can create full disk or partition backups and allows you to restore them when needed.  
- 
-### Step 2: Backup time
- 
-Choose 1 Linux and 1 Windows VM to back up and 1 VM that will become the backup server. Do not make your backup server a client or you will create an infinite backup loop.  
+### Step 2: Perform Backups
+- Select **1 Linux VM** and **1 Windows VM** as your backup clients.  
+- Designate a **separate VM as your backup server**.  
+  - Do **not** make your backup server one of the clients, or you may create an infinite backup loop.  
 
- 
-Make sure to consider the different options and types of backups and why you might use one over the other in different cases.   
- 
-### Step 3: Fight the troll
+Think about the **type of backup** you perform:  
+- **Full Backup:** Copies everything (useful as a baseline, but storage-heavy).  
+- **Incremental Backup:** Copies only changes since the last backup (efficient, but requires a full chain to restore).  
+- **Differential Backup:** Copies changes since the last full backup (middle ground).  
 
-In this step, you'll be given credentials for a new VM. You’ll also need to connect using a different VPN than the one you’ve used previously.
+### Step 3: Fight the Troll
+In this stage, you will connect to a new VM (using a different VPN than before) and attempt to preserve its integrity despite active interference by a “troll” adversary.  
 
-Your mission is to deal with a mischievous troll who’s tampered with key system files, allowing himself and his friends access to your machine. Your goal is to maintain the integrity of the system, removing illegitimate users and restoring legitimate files. You will have to revert the troll's manipulation of:
-- /etc/shadow
-- /etc/passwd
-- /etc/group
+The troll tampers with critical system files, allowing illegitimate users access. Your mission is to **restore integrity and frustrate the troll** by continually reverting his changes.  
 
-Additionally, you will remove files of illegitimate users and restore from backups legitimate files the troll edits or removes from /home. All the original home directory files can be found in the `files.zip`. 
+##### Tasks:
+1. **Remove malicious accounts:**  
+   - Delete all users **without underscores** in their usernames.  
+   - Do **not** delete:  
+     - Users with underscores  
+     - `blueteam`, `blackteam`, or system accounts  
+   - Deleting the wrong accounts could brick your VM.  
 
-**Important:**  
-- Do **NOT** delete the `shadow`, `passwd`, or `group` files—removing these will brick your VM.
-- You should only have to edit the `shadow`, `passwd`, and `group` files once.
-- You do not have edit the `shadow`, `passwd`, and `group` files directly!
-- Only remove users without a underscore in their username. Users with underscores, as well as the `blueteam`, `blackteam`, and system users, should **not** be deleted, as this could also break your VM.
+1. **Restore home directories:**  
+   - Illegitimate users’ files must be removed.  
+   - Legitimate user files that the troll tampers with must be restored from backups.  
+   - Use the provided `files.zip` archive to restore original contents under `/home`.  
 
-The troll is quick, so you’ll need to check file integrity regularly. While you can’t stop the troll from remaining in your system, you *can* prevent him from making permanent changes to your files by restoring from backups.
+1. **Integrity checks:**  
+   - The system will be scored every **2-5 seconds**.  
+   - You must pass **200 integrity checks** total not cumulative.  
+   - Monitor progress at <a href='http://172.16.2.2'>http://172.16.2.2</a>. (You will need to be connected to the VPN to access the dashboard)
 
-You are **not permitted** to alter the firewall, SSH settings, or the `Blackteam` account. Keep restoring your backups to frustrate the troll. Eventually, he’ll give up when he realizes his changes aren’t sticking!
+   The scoreboard displays:  
+   - **VM Score:** Green = VM is responding; Red = scoring engine can’t connect.  
+   - **Users:** Green = no malicious users; Red = at least one remains.  
+   - **File Integrity:** Green = all files match hashes; Red = at least one file corrupted.  
+   - **Checks Passed:** Counter toward 200 successful checks.  
+   - **Correct Files:** Must remain at **64** legitimate files.  
 
-To complete the lab, you'll need to pass 200 integrity checks. These checks occur every 2 to 5 seconds. You can monitor your progress at `172.16.2.2`, where the scoreboard will display 5 columns:
+> ⚠️ **Restrictions:** You may not alter firewall settings, SSH configuration, or the `Blackteam` account.  
 
-- **VM Score**: A green-up arrow indicates that the scoring engine successfully scored your VM. A red down arrow means the engine was unable to score your machine.
-- **Users**: A red down arrow appears if any malicious users remain on the system. Once all malicious users are removed, it will switch to a green-up arrow.
-- **File Integrity**: If any files fail to match their original hash, a red down arrow will be displayed. When all files match their original hashes, the arrow will turn green.
-- **Checks Passed**: Displays the number of checks that have been passed, with a maximum count of 200.
-- **Correct Files**: Displays the number of files that have not been corrupted. show be at 64
- 
-### Step 3: Write up
- 
-Answer the questions in the `Write up` file and include any other necessary screenshots or code to prove that you have met the pass-off requirements.  
-* [Click here to download the write up template in MS Word .docx format](Lab-3-writeup-template.docx){: download}
-* <a href="Lab-3-writeup-template.md" download>Click here to download the write up template in MarkDown format</a>.
- 
-## Requirements
- 
-[ ] 20 Points - 1 Windows VMs have been backed up  
-[ ] 20 Points - 1 Linux VMs have been backed up   
-[ ] 10 Points - 1 VM has been designated the backup server  
-[ ] 30 Points - 200 Checks have been completed  
-[ ] 20 Points - Write up   
- 
-## Submission
-Create a single PDF from the given `Write Up` file that contains your written report and screenshots showing that each requirement has been satisfied. Upload the PDF to Learning Suite. Any other file format will not be accepted.
+Your persistence is key—keep restoring from backups until the troll gives up.  
+
+### Step 4: Write-Up
+
+You must complete a **write-up** of your work using the provided template. The write-up should include:
+
+- **Answers to all questions**
+- **Screenshots for each of the following:**
+    1. Screenshots proving successful backups for both machines.
+    1. Screenshot of the backup configuration  
+    1. Screenshot of the scoreboard showing **200 checks completed**.  
+- **Any commands or scripts you used.**  
+
+#### Templates
+
+- <a href="lab-3-writeup-template.docx)" download>Download the MS Word Write-Up Template (.docx)</a>
+- <a href="lab-3-writeup-template.mdp" download>Download the Markdown Write-Up Template (.md)</a>
+
+
+### Requirements and Points
+
+### Grading Breakdown (100 Points Total)
+
+| **Task**                                               | **Points** |
+|--------------------------------------------------------|--------|
+| Backed up **1 Windows VM**                             | 10     |
+| Backed up **1 Linux VM**                               | 10     |
+| Designated **1 VM as backup server**                   | 10     |
+| Completed **200 integrity checks** against troll VM    | 40     |
+| Completed **Write-Up** with explanations + screenshots | 30     |
+
+
+### Submission
+Create a single PDF from the given `Write Up` file that contains your written report and screenshots showing that each requirement has been met. Upload the PDF to Learning Suite. Any other file format will not be accepted.
