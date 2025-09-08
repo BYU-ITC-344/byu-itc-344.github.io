@@ -70,7 +70,7 @@ You will have experience working with a variety of operating systems, including:
 | **Windows OS** | Windows 7                    | Older desktop version                               |
 |                | Windows 11 Pro               | Latest desktop version                              |
 |                | Windows Server 2022 (GUI)    | Server version with graphical interface             |
-| **Linux OS**   | Ubuntu Desktop 23.04 / 23.10 | Desktop Linux for general use                       |
+| **Linux OS**   | Ubuntu Desktop 22.04,23.04 or 24.04 | Desktop Linux for general use                       |
 |                | Ubuntu Server 22.04          | Server-focused Linux                                |
 |                | Arch Linux                   | Lightweight, customizable Linux                     |
 
@@ -195,7 +195,7 @@ You must complete a **write-up** of your work using the provided template. The w
    1. Windows 7                                            
    1. Windows 11 Pro                     
    1. Windows Server 2022 (GUI version)
-   1. Ubuntu Desktop 23.04            
+   1. Ubuntu Desktop 22.04,23.04 or 24.04            
    1. Ubuntu Server 22.04             
    1. Arch Linux                                          
 
@@ -212,7 +212,7 @@ You must complete a **write-up** of your work using the provided template. The w
 | Installed a working VM running **Windows 7**                         | 10         |
 | Installed a working VM running **Windows 11**                        | 10         |
 | Installed a working VM running **Windows Server 2022 (GUI version)** | 10         |
-| Installed a working VM running **Ubuntu Desktop 23.04**              | 10         |
+| Installed a working VM running **Ubuntu Desktop 22.04,23.04 or 24.04**              | 10         |
 | Installed a working VM running **Ubuntu Server 22.04**               | 10         |
 | Installed a working VM running **Arch Linux**                        | 20         |
 | Completed the **Write-Up**                                           | 30         |
