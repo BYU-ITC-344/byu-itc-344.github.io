@@ -60,7 +60,7 @@ The troll tampers with critical system files, allowing illegitimate users access
 1. **Integrity checks:**  
    - The system will be scored every **2-5 seconds**.  
    - You must pass **200 integrity checks** total not cumulative.  
-   - Monitor progress at <a href='http://172.16.2.2'>http://172.16.2.2</a>. (You will need to be connected to the VPN to access the dashboard)
+   - Monitor progress at <a href='http://172.16.2.2' target="_blank">http://172.16.2.2</a>. (You will need to be connected to the VPN to access the dashboard)
 
    The scoreboard displays:  
    - **VM Score:** Green = VM is responding; Red = scoring engine can’t connect.  

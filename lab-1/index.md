@@ -68,7 +68,7 @@ You will have experience working with a variety of operating systems, including:
 | **Hypervisor** | Type 1 Hypervisor            | Runs virtual machines directly on physical hardware |
 |                | Proxmox VE                   | Type 1 hypervisor and virtualization platform       |
 | **Windows OS** | Windows 7                    | Older desktop version                               |
-|                | Windows 11                   | Latest desktop version                              |
+|                | Windows 11 Pro               | Latest desktop version                              |
 |                | Windows Server 2022 (GUI)    | Server version with graphical interface             |
 | **Linux OS**   | Ubuntu Desktop 23.04 / 23.10 | Desktop Linux for general use                       |
 |                | Ubuntu Server 22.04          | Server-focused Linux                                |
@@ -136,7 +136,7 @@ You will need to create the following virtual machines (VMs) on Proxmox:
 | **OS**                        | **Notes**                                                                                                                                           |
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Windows 7                     | Create a local user account.                                                                                                                        |                                                                |
-| Windows 11                    | Download the ISO from the official Microsoft website; create a local user account. Hint: You can install Windows 11 without an internet connection. |
+| Windows 11 Pro                    | Download the ISO from the official Microsoft website; create a local user account. Hint: You can install Windows 11 Pro without an internet connection. |
 | Windows Server 2022 (GUI)     | Create a local administrator account.                                                                                                               |
 | Ubuntu Desktop 23.04 or 23.10 | Download the ISO from the official Ubuntu website.                                                                                                  |
 | Ubuntu Server 22.04           | ISO will be provided.                                                                                                                               |
@@ -193,7 +193,7 @@ You must complete a **write-up** of your work using the provided template. The w
 - **Answers to all questions**
 - **Screenshots for each of the following showing the OS and network information as well as a connectivity test:**
    1. Windows 7                                            
-   1. Windows 11                      
+   1. Windows 11 Pro                     
    1. Windows Server 2022 (GUI version)
    1. Ubuntu Desktop 23.04            
    1. Ubuntu Server 22.04             
