@@ -152,7 +152,7 @@ You will need to create the following virtual machines (VMs) on Proxmox:
 **Important:** When uploading ISOs to Proxmox:
 
 * Use the **“Download from URL”** option whenever possible. It will be much faster than trying to upload them from your computer over the VPN.
-* Make sure to store the ISOs in the **Labs** storage, **not the LVM**.
+* Make sure to store the ISOs in the **Labs** storage, **not the LVM or ISOs**.
 * If the LVM fills up, the Proxmox instance will crash.
 
 ### Network Configuration
