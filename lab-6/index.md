@@ -1,7 +1,3 @@
----
-title: Lab 6: Vulnerability Scanning and Metasploitable
----
-
 # Lab 6: Vulnerability Scanning and Metasploitable
 
 ## Overview
@@ -68,15 +64,14 @@ You must complete a **write-up** of your work using the provided template. The w
 
 #### Templates
 
-- [Download the MS Word Write-Up Template (.docx)](Lab-6-writeup-template.docx){: download}
-- [Download the Markdown Write-Up Template (.md)](Lab-6-writeup-template.md){: download}
-
+- <a href="lab-6-writeup-template.docx" download>Download the MS Word Write-Up Template (.docx)</a>
+- <a href="lab-6-writeup-template.md" download>Download the Markdown Write-Up Template (.md)</a>
 
 ## Helpful links  
 
 [NIST](https://nvd.nist.gov/vuln/search)
 
-<div style="page-break-after: always"></div>
+## Requirements and Points
 
 ### Grading Breakdown (100 Points Total)
 
@@ -88,5 +83,5 @@ You must complete a **write-up** of your work using the provided template. The w
 | Write-Up Questions                   | 40         |             
 
 
-## Submission
+### Submission
 Create a single PDF from the given `Write Up` file that contains your written report and screenshots showing that each requirement has been met. Upload the PDF to Learning Suite. Any other file format will not be accepted.
