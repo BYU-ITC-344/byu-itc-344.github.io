@@ -7,8 +7,6 @@
 
 1. Compare the two methods and explain the advantages and disadvantages of both.
 
-1. Include here screenshots showing your script in action.
-
 1. Paste here the script you used to detect and remove the malware
 
 ```

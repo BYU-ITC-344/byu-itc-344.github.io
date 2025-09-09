@@ -1,6 +1,3 @@
----
-title: Homework 1 - SSH and CLI Game
----
 # Homework 1 - SSH and CLI Game
 
 ## Introduction

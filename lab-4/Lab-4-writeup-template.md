@@ -1,39 +1,26 @@
-# Lab 4 Write-up
+# Lab 4: Password Recovery 
 
 ## Questions
-Describe in detail how you broke into the Linux machine.
-<br/>
 
-How might you prevent someone from breaking into the Linux machine using the method you used?
-<br/>
+1. Describe in detail how you broke into the Linux machine.
 
-Describe in detail how you broke into the Windows machine.
-<br/>
+1. How might you prevent someone from breaking into the Linux machine using the method you used?
 
-How might you prevent someone from breaking into the Windows machine using the method you used?
-<br/>
+1. Describe in detail how you broke into the Windows machine.
 
-Describe in detail how you broke into the Mac.
-<br/>
+1. How might you prevent someone from breaking into the Windows machine using the method you used?
 
-How might you prevent someone from breaking into the Mac using the method you used? 
+1. Describe in detail how you broke into the Mac.
 
-## Hashes
-Which MAC did you break into? (There is a number in marker on the back) What was flag’s password?
-<br/>
+1. How might you prevent someone from breaking into the Mac using the method you used? 
 
-What was the Windows hash you were given? What is the password?
-<br/>
 
-What was the hash of bob’s password on Linux? What was bob’s password in the Linux machine?
-<br/>
+### Hashes
+
+1. What was the Windows hash you were given? What is the password?
+
+1. What was the hash of bob’s password on Linux? What was bob’s password in the Linux machine?
 
 ## Screenshots
 Windows 10
-<br/>
 Linux
-<br/>
-Mac
-<br/>
-
-

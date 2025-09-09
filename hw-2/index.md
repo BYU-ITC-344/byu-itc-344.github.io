@@ -1,7 +1,3 @@
----
-title: Homework 2 - Virtualization Foundations & Security
----
- 
 # Homework 2 - Virtualization Foundations & Security
  
 ## Introduction

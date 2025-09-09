@@ -1,73 +1,97 @@
----
-title: Lab4 Password Recovery
----
-# Lab 4 - Password Recovery
+# Lab 4 – Password Recovery
 
 ## Overview
 
-People like Bob, Alice, and Eve forget their passwords, it happens all the time. Most websites and services have a way for you to reset your password should you forget it. However, operating systems are a little trickier but there are ways to change the password and let yourself back in. Use the magic of cybersecurity and get into the VMs.
+People like Bob, Alice, and Eve forget their passwords — it happens all the time. Most websites and services have a **password reset mechanism**, but operating systems can be trickier. Fortunately, there are still ways to reset or recover access. In this lab, you will use the **magic of cybersecurity** to get into two virtual machines (VMs) and practice password recovery techniques.
 
-You may collaborate with one another while breaking into the VMs, but you are not allowed to discuss the hashes with one another. The TAs will assist with any technical issues. TA's will not give walkthroughs of breaking into the VMs but will help you find resources if you are struggling.
+This lab will give you hands-on experience with:
 
-<div style="page-break-after: always"></div>
+* Accessing locked systems.
+* Extracting password hashes.
+* Cracking passwords with custom wordlists and rainbow tables.
+* Documenting your process and results like a professional.
+
+You may collaborate with classmates while breaking into the VMs, but **you are not allowed to share or discuss the actual hashes** with one another. The TAs will assist with technical issues (e.g., VM startup problems) but will **not provide walkthroughs** of breaking into the VMs. They may, however, point you toward resources if you get stuck.
 
 ## Instructions
-2 VMs will be uploaded to your ProxMox instance. One for Linux and another for Windows 10. Your task will be to break into each VM using whatever tools or methods you deem appropriate. ***Warning*** If you do plan on downloading hacking or malicious tools make sure to do it off the BYU network.
 
-Additionally, you will break into a physical Mac device. On Mac there will be an account called 'flag' and on the Linux VM there will be an account called 'bob'. You will need to recover the hashes for these accounts and then crack the passwords. 
+### Step 1 – Breaking In: VMs
 
-For the Windows VM, you will only need to break in. A Windows password hash will be given to you separately. The Windows hash does not relate to any user from the Windows VM. We have provided a hash for you because extracting Windows hashes is difficult without special tools.  
+Two VMs will be uploaded to your Proxmox instance:
 
->Note: Please look at the write-up while doing the lab so you know what deliverables are required.
+* **Linux VM**
+* **Windows 10 VM**
+
+Your first task is to **break into each VM**.
+
+* **Linux VM**
+
+  * You must recover the password hash for the account called `bob`.
+  * **Do NOT reset `bob`’s password.** If you reset it, you will not be able to complete the cracking requirement.
+  * You will, however, need to demonstrate that you can **reset the password for a different user account** (to show you can regain access through privilege escalation, the root account can be used for this).
+
+* **Windows VM**
+
+  * Your task is to **break into the VM** and gain access.
+  * For the password cracking portion, a **Windows password hash** will be provided separately. This hash does **not** correspond to any user in the Windows VM.
+  * We provide the hash because extracting Windows password hashes requires specialized tools not included in this lab.
 
 
-### Step 1 - Breaking In - VMs
+### Step 2 – Cracking Passwords
 
-Once you find the VMs on your instance, your task will be to break into them. For the Linux VM do ***NOT*** reset the password for the 'bob' account. Do ***NOT*** reset the password for the account called `bob` You will need to obtain `bob`'s password hash and break it.
+Once you have access, your next task is to **crack the passwords**.
 
-### Step 2 - Breaking In - Mac
+* **Linux Password Cracking**
 
-Since we can't install a Mac VM on anything other than Mac hardware, we have obtained 4 Macs that can be used for this assignment.
+  * Extract the `bob` account’s password hash from `/etc/shadow`.
+  * The company enforces a **very weak password format**:
 
-1. Break into an iMac
-1. Set a new password for an account other than `flag`
+    ```
+    <three lowercase letters>-<three numbers>
+    ```
 
-If you break the Mac operating system or hardware in any way you will lose the 30 points associated with the Mac portion of this lab. 
+    Examples: `aaa-000`, `abc-123`, `zzz-999`.
+  * Generate a **custom wordlist** containing all possible passwords in this format.
+  * Use a cracking tool (e.g., **John the Ripper** or **Hashcat**) with your wordlist to recover `bob`’s password.
 
-If you change the flag password it will be considered cheating and you will receive a 0 on this lab.
+* **Windows Password Cracking**
 
-### Step 3 - Cracking Passwords
+  * You will be given a **pre-extracted Windows password hash**.
+  * Use **Ophcrack** with rainbow tables to crack the password.
+  * Take a screenshot of the cracked password in Ophcrack.
 
-You will need to extract the password hashes from a Linux operating system and another from the Mac. The Windows hash will be given to you. Your task will be to find what the passwords are. 
+### Step 3 – Write-Up
 
-You will use three different approaches to cracking a password. For the Linux password, you will use a custom-made wordlist using data about the format of the password, for the Windows 10 password you will use a rainbow table, and for the Mac a list of common passwords. 
+You must complete a **write-up** of your work using the provided template. The write-up should include:
 
-The company the Linux password belongs to specifies the format of their employee's passwords to the extreme and instead of making it more secure it has done the opposite. 
+- **Answers to all questions**
+- **Screenshots for each of the following:**
+    1. Proof of breaking into both VMs.
+    1. Screenshot of password hash extraction for bob.
+    1. Screenshot of your custom wordlist (sample output).
+    1. Cracking results for Linux (bob’s password).
+    1. Cracking results for Windows (rainbow table + recovered password).
+    1. Resetting a different Linux account’s password.
+- **Any commands or scripts you used.**  
 
-Create a password list of all combinations that match this pattern. Three letters followed by a `-` then three numbers. The first password in the sequence would be `aaa-000` and the last would be `zzz-999`.
+#### Templates
 
-To crack the Windows password you will use rainbow tables using the program `Ophcrack`.
+* <a href="lab-4-writeup-template.docx" download>Download the MS Word Write-Up Template (.docx)</a>
+* <a href="lab-4-writeup-template.md" download>Download the Markdown Write-Up Template (.md)</a>
 
-Cracking the Mac password will require a common wordlist. 
 
-### Step 4 - Write Up
+### Requirements and Points
 
-Answer the questions in the `Write up` file and include the needed screenshots
-* [Click here to download the write up template in MS Word .docx format](Lab-4-writeup-template.docx){: download}
-* <a href="Lab-4-writeup-template.md" download>Click here to download the write up template in MarkDown format</a>.
+### Grading Breakdown (100 Points Total)
 
-<div style="page-break-after: always"></div>
 
-## Requirements
-**Please** check the writeup for specifics you need to submit. <br>
-[ ] 15 Points - Get into the Windows VM 
-[ ] 15 Points - Get into the Linux VM and reset the password for an account other than the bob account  
-[ ] 15 Points - Get into the Mac and reset the password for an account other than the flag account  
-[ ] 15 Points - Crack the Linux password  
-[ ] 15 Points - Crack the Windows password  
-[ ] 15 Points - Crack Mac password  
-[ ] 10 Points - Write up  
+| **Task**                      | **Deliverable**                                                                                                         | **Points** |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ---------- |
+| **Windows VM Access**         | Demonstrate that you can log in or bypass login on the Windows VM. Include a screenshot.                                | **25**     |
+| **Linux VM Access**           | Gain access and show that you can reset the password for an account other than `bob`. Include a screenshot.             | **20**     |
+| **Linux Password Cracking**   | Extract the hash for `bob` and crack it using a custom wordlist. Show screenshots of the process and result.            | **25**     |
+| **Windows Password Cracking** | Crack the given Windows password hash using Ophcrack with rainbow tables. Provide a screenshot of the cracked password. | **10**     |
+| **Technical Write-Up**        | Submit the provided write-up file as a PDF. Must include answers to all questions + required screenshots.               | **20**     |
 
-## Submission
-
-Create a single PDF from the given `Write Up` file that contains your written report and screenshots showing that each requirement has been met. Upload the PDF to Learning Suite.
+### Submission
+Create a single PDF from the given `Write Up` file that contains your written report and screenshots showing that each requirement has been met. Upload the PDF to Learning Suite. Any other file format will not be accepted.
