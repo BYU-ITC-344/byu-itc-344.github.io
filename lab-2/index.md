@@ -202,7 +202,7 @@ You must complete a **write-up** of your work using the provided template. The w
 #### Templates
 
 - <a href="lab-2-writeup-template.docx)" download>Download the MS Word Write-Up Template (.docx)</a>
-- <a href="lab-2-writeup-template.mdp" download>Download the Markdown Write-Up Template (.md)</a>
+- <a href="lab-2-writeup-template.md" download>Download the Markdown Write-Up Template (.md)</a>
 
 ## Helpful links
 
