@@ -1,6 +1,3 @@
----
-title: Lab 2 - Containers
----
 # Lab 2 - Containers
 
 ## Introduction
@@ -201,7 +198,7 @@ You must complete a **write-up** of your work using the provided template. The w
 
 #### Templates
 
-- <a href="lab-2-writeup-template.docx)" download>Download the MS Word Write-Up Template (.docx)</a>
+- <a href="lab-2-writeup-template.docx" download>Download the MS Word Write-Up Template (.docx)</a>
 - <a href="lab-2-writeup-template.md" download>Download the Markdown Write-Up Template (.md)</a>
 
 ## Helpful links
