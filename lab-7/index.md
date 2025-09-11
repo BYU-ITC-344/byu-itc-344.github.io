@@ -185,13 +185,13 @@ You must submit a **memo-style report** addressed to the leadership group.
     - Avoid technical jargon—focus instead on business impact (e.g., “The company’s website was unavailable to customers,” or “A malicious file disrupted normal operations”).
     - Highlight the risks posed by the issues, such as downtime, data loss, or reputational harm.
 
-2. **Resolution Summary**
+1. **Resolution Summary**
 
     - Briefly explain how the issues were fixed in terms that emphasize outcomes rather than technical details.
     - For example, say “We restored the website to full functionality and ensured it returned correct responses” instead of describing exact commands or code.
     - Emphasize restored stability, security, and business continuity.
 
-3. **Policy and Practice Recommendations**
+1. **Policy and Practice Recommendations**
 
     - Provide forward-looking suggestions on how the organization can strengthen defenses, reduce risks, and avoid similar issues in the future.
     - Recommendations might include employee training, stronger system monitoring, regular audits, or establishing clearer response procedures.
@@ -223,7 +223,7 @@ You must also submit a **technical report** addressed to the IT group.
    * Include any commands, scripts, configuration changes, or patches that were applied.
    * If an issue could not be fully resolved, explain why and provide recommendations for future workarounds or escalations.
 
-3. **Policy and Practice Recommendations**
+1. **Policy and Practice Recommendations**
 
    * Suggest improvements to existing IT practices that would prevent similar issues from recurring.
    * These may include changes to patch management, system monitoring, malware detection, user access controls, or incident response procedures.
@@ -249,14 +249,14 @@ You must also submit a **technical report** addressed to the IT group.
 - You may fix issues that are not scored. If points don’t update, wait 10 minutes, then contact a TA.
 - Goal: **find and fix as many issues as possible** to maximize score.
 
-## Grading Breakdown (730 Points Total)
+## Grading Breakdown (700 Points Total)
 
 
 | **Task**          | **Points** |
 | ----------------- | ---------- |
 | Defense Points    | 500        |
-| Memo              | 40         |
-| Technical Report  | 40         |             
+| Memo              | 100        |
+| Technical Report  | 100        |             
 
 
 ## Submission Instructions

@@ -1,6 +1,4 @@
----
-title: Final Project
----
+# Final Project
 
 The final project is worth **250 points total** (25% of your grade). It is designed to evaluate your ability to work as part of a team, apply concepts learned in class, and tackle a challenging operating-systems-related problem.
 
@@ -19,6 +17,7 @@ You will form teams of **3 or 4 students**. For the *Team Formation* assignment 
 - Only **one team member** needs to submit the working project and documentation.
 - The **presentation** will be graded by the professor.
 - **Peer evaluations** must be submitted by each student individually.
+
 ## Project Components
 
 ### Documentation (100 Points)

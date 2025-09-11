@@ -1,6 +1,4 @@
----
-title: Final Project Documentation
----
+# Final Project Documentation
 
 Your final project documentation is due on the last day of class (before reading day and final exams). Your documentation should provide sufficient information that someone could use the product or repeat the experiment. It should also report on your process for creating the project similar to what you offer in the live presentation. Your presentation and documentation combined serve as evidence of a working project.
 
