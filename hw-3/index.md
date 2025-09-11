@@ -38,7 +38,7 @@ Provide recommendations for reducing risk, including:
 * **Monitoring & Logging:** Enhancing visibility to detect malicious activity.
 * **Compensating Controls:** Using firewalls, endpoint protection, and restricted access while migration occurs.
 
-## Writing the Paper
+## Deliverables
 
 Your paper should:
 
@@ -65,4 +65,4 @@ Your paper should:
 
 ### Notes for Submission
  
-* Submit your assignment in **PDF format** only.
+* Submit your assignment in **PDF format**.
