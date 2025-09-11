@@ -100,7 +100,7 @@ Follow these steps to connect:
 
 1. **Import the OVPN File**
    - Open the OpenVPN client.
-   - Drag and drop the `.ovpn` file you received via email onto the application **or** click the **plus (+) button** at the bottom right, select **Upload File**, then browse to your `.ovpn` file and select it.
+   - Drag and drop the `.ovpn` file from Learning Suite (`Content > Getting Started > VPN`) onto the application **or** click the **plus (+) button** at the bottom right, select **Upload File**, then browse to your `.ovpn` file and select it.
 
 1. **Connect to the VPN**
     - Once the file is imported, click the **radio button** next to the profile to connect.
