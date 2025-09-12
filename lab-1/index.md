@@ -138,7 +138,7 @@ You will need to create the following virtual machines (VMs) on Proxmox:
 | Windows 7                     | Create a local user account.                                                                                                                        |                                                                |
 | Windows 11 Pro                    | Download the ISO from the official Microsoft website; create a local user account. Hint: You can install Windows 11 Pro without an internet connection. |
 | Windows Server 2022 (GUI)     | Create a local administrator account.                                                                                                               |
-| Ubuntu Desktop 23.04 or 23.10 | Download the ISO from the official Ubuntu website.                                                                                                  |
+| Ubuntu Desktop 22.04,23.04 or 24.04 | Download the ISO from the official Ubuntu website.                                                                                                  |
 | Ubuntu Server 22.04           | ISO will be provided.                                                                                                                               |
 | Arch Linux                    | Download the ISO from the official Arch Linux website.                                                                                              |
 
