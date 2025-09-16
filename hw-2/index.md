@@ -63,7 +63,7 @@ To reduce this risk, you will:
          * **Path:** `/` (applies permissions across the entire datacenter)
          * **User:** `admin` or whatever you called your admin user
          * **Role:** `Administartor`
-   1. Enable Two-Factor Authentication (2FA)**
+   1. Enable Two-Factor Authentication (2FA)
       1. In the web GUI, go to:
          **Datacenter → Permissions → Two Factor**.
       1. Click **Add → TOTP**.
@@ -131,6 +131,7 @@ Instead of giving each student VM-start privileges individually, create a **“V
  
 1. **Assign Users to Groups**
    1. Create the following users (Use the same steps as before, but select a group for the user)
+   
       | **User**                        | **Assigned Group(s)**         | **Effective Role / Permissions**                                                                           |
       | ------------------------------- | ----------------------------- | ---------------------------------------------------------------------------------------------------------- |
       | **Alice**  | Admins                        | Full datacenter control: manage VMs, firewall, users, and groups                                           |
