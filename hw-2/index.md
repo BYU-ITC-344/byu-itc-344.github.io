@@ -197,22 +197,22 @@ In this step, you’ll configure firewall rules so that **only your management c
    1. **Allow HTTPS (port 8006)**
       * Restricts web GUI access to your management system.
       * Prevents attackers from scanning the network so that they cannot even see the login page.
+      * Note the port that the web GUI uses for HTTPS
  
    1. **Drop all other inbound traffic by default**
+      * This should already be set under **Datacenter → Firewall → Options**.
       * Enforces a “deny-all, allow-by-exception” security model.
       * Any traffic not explicitly allowed is automatically blocked, providing a strong baseline.
-      * This should already be set
+
  
 1. **Verify Rules with a TA**
    - Before making changes active, double-check with a TA to confirm your rules are correct. A single mistake (such as forgetting to allow HTTPS or SSH from your management IP) could lock you out of the Proxmox web interface.
+   - If you enable your firewall without checking with a TA, you will receive a 10 point deduction as a penalty to be let back in to your Proxmox.
  
 1. **Activate the Datacenter Firewall**
    * Navigate to **Datacenter → Firewall → Options**.
    * Find the **Firewall** setting.
    * Click and switch it to **Enabled**.
-
-
-
 
 
 ### Step 4: VM-Level Firewall
