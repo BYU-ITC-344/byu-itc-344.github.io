@@ -1,13 +1,9 @@
 ---
 title: Midterm Study Guide
 ---
-The midterm exam is designed to take approximately 45 minutes. You will have the entire class period plus the lab period to take the exam -- 1 hour 50 minutes. So there should be plenty of time if you want to take it slowly. You will take it on LearningSuite so please bring your computer (or preferred device) to class. The exam is closed-book, closed-notes, closed-internet.
+The midterm exam is designed to take approximately 45 minutes. You will have the entire class period plus the lab period to take the exam -- 1 hour 50 minutes. So there should be plenty of time if you want to take it slowly. You will take it on Paper so please bring your Pen/Pencil to class. The exam is closed-book, closed-notes, closed-internet.
 
-All questions are _selected response_. That is, multiple choice, multi-select, true/false, matching, etc. On a multiple choice question, if you think more than one answer could be correct, always select the _best_ answer.
-
-On matching questions you get 1 point for each correct answer. Matches are not always 1:1. The same answer may match multiple prompts and there may be answers that don't match any prompt.
-
-On multi-select questions you get 1 point for selecting each correct answer and you get -1 (negative one) point for selecting each incorrect answer. However, your overall score for multi-select cannot fall below 0.
+All questions are multiple choice, multi-select, true/false, matching, or short response. On a multiple choice question, if you think more than one answer could be correct, always select the _best_ answer.
 
 You should review the pop quizzes - especially questions that you got wrong. Variations of a few questions from the quizzes may appear on the exam.
 
@@ -15,49 +11,78 @@ The following study questions are to help you prepare for the exam. These are op
 
 For studying, use whatever resources you prefer: textbook, slide deck, web search, etc. You may pose these study questions to AI but remember that it sometimes gives wrong answers.
 
+
 ## Operating System Fundamentals
+
 * What are the two basic jobs of an operating system?
-* How does security impact the two basic jobs?
+* How does security impact these two jobs?
+* What is the difference between a monolithic kernel and a microkernel?
+* What are cooperative multitasking, preemptive multitasking, and single-tasking?
+* What risks are associated with rolling release operating systems?
+* What best practices mitigate risks when using rolling release OS in enterprise environments?
+* What is the role of device drivers in an operating system?
 
 ## Installing and Booting Operating Systems
-* "Booting" an operating system involves incrementally loading larger and more capable pieces of code. Where is the first piece of code located? Where are the second and third pieces?
-* What does a computer boot when _installing_ an operating system? Where does it get that code to boot?
-* Once the operating system has been installed where does it typically boot from?
-* What is an "ISO file"? How is it used when installing an OS on a virtual machine? How would you use an ISO file to install an OS on a physical computer?
 
-## VMs and Containers
+* Where is the first piece of boot code located? Where are the second and third pieces?
+* What does a computer boot from when installing an operating system, and where does that code come from?
+* Once an OS is installed, where does it typically boot from?
+* What is an ISO file? How is it used when installing on a virtual machine? How is it used on a physical computer?
+* What is the difference between minimum and recommended hardware requirements?
+* What tasks should be performed before installing an OS?
+* What are examples of media a system may boot from when installing an OS?
+
+
+## Virtualization and Containers
+
 * What is the difference between a virtual machine and a container?
-* What is the difference between a Type 1 Hypervisor and a Type 2 Hypervisor?
-* What is the difference between a Virtual Machine Image, A Virtual Machine, and a Snapshot?
-* What is the difference between a Dockerfile, a Docker Image, and a Docker Container?
-* Why can you run an x86 architecture container on an ARM-based Mac (M1, M2, or M3 processor)?
+* What is the difference between a Type 1 hypervisor and a Type 2 hypervisor?
+* What is the difference between a VM image, a VM, and a snapshot?
+* What is the difference between a Dockerfile, a Docker image, and a Docker container?
+* What is the difference between privileged and unprivileged containers?
+* How do Type 1 hypervisors, Type 2 hypervisors, Docker, and LXC containers achieve isolation?
+* What is resource overcommitment in a hypervisor? What risks does it create?
+* What is the tradeoff between performance and flexibility in virtualized network devices?
+* What technical challenges arise when running a hypervisor inside another hypervisor (“VMception”)?
+* How can CPU virtualization be achieved when the guest architecture differs from the host CPU architecture?
 
 ## Cloud Computing
+
 * What is Infrastructure as a Service (IaaS)? How would you use it?
 * What is Platform as a Service (PaaS)? How would you use it?
 * What is Software as a Service (SaaS)? How would you use it?
 * Who are the typical buyers of each form of cloud computing?
-* The alternatives to cloud computing are an On-Premise Data Center and Colocation. These predate cloud computing. When would you still choose one of them?
-* What is a private cloud? Does BYU have one?
+* What is the difference between cloud computing and alternatives such as on-premise or colocation?
+* What is a private cloud?
+
 
 ## File and Printer Sharing
-* How were Local Area Networks (LANs) used before the internet? Do they still serve those functions?
-* How does a computer discover printers on the network?
-* There are a lot of different print and file sharing protocols. Why do you think that is?
+
+* How were Local Area Networks (LANs) used before the internet? Do they still serve those functions today?
+* How does a computer discover printers on a network?
 
 ## Access Control
-* The fundamental components of access control are Users, Groups, Permissions, and Assets. How do these relate to each other?
-* What is a _role_ and how does it relate to the fundamental components?
-* If you have a thumb drive formatted with the typical FAT file system, can set access controls on the files it contains? Why or why not?
+
+* What are the four fundamental components of access control: users, groups, permissions, and assets? How do they relate to each other?
+* What is a role, and how does it relate to users, groups, and permissions?
+* In Linux or Windows, must every user belong to a group?
+* Can you set access controls on a FAT/FAT32-formatted thumb drive? Why or why not?
 
 ## Backup Planning
-* What digital media can be used for backups?
+
+* What types of digital media can be used for backups?
 * What are the advantages and disadvantages of backing up to the cloud?
-* Do you suppose that cloud storage is also backed up? How might OneDrive, iCloud, Google Drive, Box.com and related services be backed up?
-* What is different about backing up databases?
-* What would be the main components of a backup plan?
+* Are cloud storage services such as OneDrive, iCloud, or Google Drive also backed up? How?
+* What is different about backing up databases compared to files?
+* What are the main components of a backup plan?
+
 
 ## Modern Operating Systems
-* Contemporary operating systems are all preemptive multitasking. What are the task models from earlier operating systems? If preemptive multitasking is superior, why might the other models have been chosen?
-* PCs running DOS originally had a Command-Line Interface (CLI). With Windows they gained a Graphical User Interface (GUI). MacOS originally had a GUI and later gained a CLI. What are the relative advantages of a CLI and a GUI? Why do contemporary operating systems have both?
-* CPUs are known by their register size: 8, 16, 32, and 64 bits. Is the address size always the same as the register size? Why might it be bigger or smaller?
+
+* What task models came before preemptive multitasking? Why might those models have been chosen?
+* What are the advantages of a CLI compared to a GUI? What are the advantages of a GUI compared to a CLI? Why do modern OS include both?
+* What does it mean when CPUs are described by their register size (8, 16, 32, 64 bits)?
+* Is the CPU register size always the same as the address size? Why might they differ?
+* What is the difference between user mode and privileged mode in a CPU?
+* What are the difference in the hardware requirements between windows 7 and 11?
+* How do interrupts influence the interaction between input devices and CPU processing?
