@@ -48,7 +48,7 @@
 3. Simplifies programming by hiding hardware complexity from applications.
 4. The part of the OS that communicates directly with hardware components.
 5. Architecture where the majority of OS services run in kernel space for performance.
-6. Storage system that defines how files are stored, retrieved, and organizeD.
+6. Storage system that defines how files are stored, retrieved, and organized.
 7. OS optimized for running end-user applications and interacting with local devices.
 8. OS designed for scalability, concurrency, and handling network-based client requests.
 9. A multitasking approach where the OS forcibly switches between processes.
@@ -106,7 +106,7 @@
 
    - A. Privileged containers map root inside the container to root on the host.
    - B. Unprivileged containers do not support networking.
-   - D. Privileged containers run slower due to UID translation.
+   - C. Privileged containers run slower due to UID translation.
    - D. Unprivileged containers require a hypervisor to run.
 
 
