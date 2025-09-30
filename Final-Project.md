@@ -1,6 +1,6 @@
 # Final Project
 
-The final project is worth **250 points total** (25% of your grade). It is designed to evaluate your ability to work as part of a team, apply concepts learned in class, and tackle a challenging operating-systems-related problem.
+The final project is worth **250 points total** (20% of your grade). It is designed to evaluate your ability to work as part of a team, apply concepts learned in class, and tackle a challenging operating-systems-related problem.
 
 **Breakdown of points:**
 

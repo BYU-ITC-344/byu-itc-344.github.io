@@ -67,32 +67,32 @@
 1. On a preemptive multitasking system, what event can occur to preempt a running process and allow a new process to get control of the CPU?
  	
    - A. 	time slice expiration
- 	- B. 	an infinite loop
- 	- C. 	a lower priority process requires the CPU
- 	- D. 	a memory error
+   - B. 	an infinite loop
+   - C. 	a lower priority process requires the CPU
+   - D. 	a memory error
 
 
 1. Which of the following is true about the Linux OS?
 
- 	- A. 	It is a proprietary OS, developed by Novell.
- 	- B. 	It is at the heart of many embedded and real-time systems.
- 	- C. 	There is no GUI option for any of the distributions.
- 	- D. 	The command line interface is called PowerShell.
+   - A. 	It is a proprietary OS, developed by Novell.
+   - B. 	It is at the heart of many embedded and real-time systems.
+   - C. 	There is no GUI option for any of the distributions.
+   - D. 	The command line interface is called PowerShell.
 
 1. Which of the following is a difference between installing an OS on a virtual machine versus a physical computer?
 
- 	- A. 	You do not require a license to install Windows on a virtual machine.
- 	- B. 	On a physical computer, you don't need to be concerned about device drivers.
- 	- C. 	On a virtual machine, you must install the same OS that is running on the host computer.
- 	- D. 	You must choose the type of network connection on a virtual machine.
+   - A. 	You do not require a license to install Windows on a virtual machine.
+   - B. 	On a physical computer, you don't need to be concerned about device drivers.
+   - C. 	On a virtual machine, you must install the same OS that is running on the host computer.
+   - D. 	You must choose the type of network connection on a virtual machine.
 
 
 1. Which of the following is NOT a task in preparation for installing an OS?
 
- 	- A. 	Make sure the computer meets hardware requirements.
- 	- B. 	Ensure the hardware is working correctly.
- 	- C. 	Be aware of the computer's storage configuration.
- 	- D. 	Perform a low-level format on the installation disk.
+   - A. 	Make sure the computer meets hardware requirements.
+   - B. 	Ensure the hardware is working correctly.
+   - C. 	Be aware of the computer's storage configuration.
+   - D. 	Perform a low-level format on the installation disk.
 
 
 1. Which of the following best describes a VM snapshot?
