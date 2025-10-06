@@ -29,12 +29,14 @@ Your first task is to **break into each VM**.
   * You must recover the password hash for the account called `bob`.
   * **Do NOT reset `bob`’s password.** If you reset it, you will not be able to complete the cracking requirement.
   * You will, however, need to demonstrate that you can **reset the password for a different user account** (to show you can regain access through privilege escalation, the root account can be used for this).
+  * Make sure to take a screenshot showing that you are logged in, and ensure your name is clearly visible in the screenshot.
 
 * **Windows VM**
 
   * Your task is to **break into the VM** and gain access.
   * For the password cracking portion, a **Windows password hash** will be provided separately. This hash does **not** correspond to any user in the Windows VM.
   * We provide the hash because extracting Windows password hashes requires specialized tools not included in this lab.
+  * Make sure to take a screenshot showing that you are logged in, and ensure your name is clearly visible in the screenshot.
 
 
 ### Step 2 – Cracking Passwords
