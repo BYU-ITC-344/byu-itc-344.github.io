@@ -36,7 +36,7 @@ Think about the **type of backup** you perform:
 - **Differential Backup:** Copies changes since the last full backup (middle ground).  
 
 ### Step 3: Fight the Troll
-In this stage, you will connect to a new VM **(using a different VPN than before, the VPN is attached to the email with your credentials)** and attempt to preserve its integrity despite active interference by a “troll” adversary.  
+In this stage, you will connect to a new VM over SSH **(using a different VPN than before, the VPN is attached to the email with your credentials)** and attempt to preserve its integrity despite active interference by a “troll” adversary.  
 
 The troll tampers with critical system files, allowing illegitimate users access. Your mission is to **restore integrity and frustrate the troll** by continually reverting his changes.  
 
