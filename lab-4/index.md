@@ -59,7 +59,7 @@ Once you have access, your next task is to **crack the passwords**.
 * **Windows Password Cracking**
 
   * You will be given a **pre-extracted Windows password hash**.
-  * Use **Ophcrack** with rainbow tables to crack the password.
+  * Use **Ophcrack** with rainbow tables to crack the password. You will only need the XP tables.
   * Take a screenshot of the cracked password in Ophcrack.
 
 ### Step 3 – Write-Up
