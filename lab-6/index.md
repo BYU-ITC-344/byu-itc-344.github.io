@@ -8,7 +8,7 @@ Patching involves applying updates and fixes to software applications and operat
 
 In today's digital age, where cyber threats are prevalent and attacks are becoming increasingly sophisticated, vulnerability scanning and patching are essential security practices. Organizations that fail to implement these measures are putting their data, operations, and reputation at risk. Therefore, it is crucial to prioritize these activities and ensure they are performed regularly and effectively.
 
-In this lab, you will practice scanning a machine for vulnerabilities and patching some of the vulnerabilities you find. The VMs that you will need for this lab will appear in your Proxmox instance as VM 1002 (OpenVAS) and 1003 (metasploitable). If you do not see these VMs please contact a TA.
+In this lab, you will practice scanning a machine for vulnerabilities and patching some of the vulnerabilities you find. The VMs that you will need for this lab will appear in your Proxmox instance as VM 6001 (lab6-openvas) and 6002 (lab6-metasploitable). If you do not see these VMs please contact a TA.
 
 ## Lab Technologies
 
@@ -24,7 +24,7 @@ After this lab, you will have worked with:
 
 Due to the vulnerable nature of the Metasploitable machine, it will be hosted on a host-only network so it cannot reach the internet. Creating a host-only network in Proxmox involves setting up a virtual network that allows communication between VMs and the Proxmox host but not with external networks. 
 
-1. In the Promox interface click on your server node and go to `System` > `Network`
+1. In the Proxmox interface click on your server node and go to `System` > `Network`
 1. Click on `Create` and select `Linux Bridge`.
 1. In the `Create: Linux Bridge` dialog, configure the bridge:
     - **Bridge name**: Set the name to `vmbr1`.
@@ -37,12 +37,13 @@ Due to the vulnerable nature of the Metasploitable machine, it will be hosted on
 1. In the `Add: Network Device` dialog select `vmbr1` as the `Bridge`.
 1. Click `Add` to save the new network device.
 
-Make sure both the openVAS and Metasploitable VMs are now on the `vmbr1` bridge. You will have to manually set the IP addresses for each machine since there is no DHCP server. Set the IPs in the 192.168.0.0/16 range and make sure they can ping each other. 
-
+Make sure both the OpenVAS and Metasploitable VMs are now on the `vmbr1` bridge. You will have to manually set the IP addresses for each machine since there is no DHCP server. Set the IPs in the 192.168.0.0/16 range and make sure they can ping each other. 
 
 ### Step 2: Scanning Metasploitable 2
 
-This [guide](https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-openvas-9-0-part-2/) will walk you through how to scan a machine and view the results. The scan will take a while so it is recommended you start it and come back to it later. 
+The credentials to the kali machine are `kali:kali`. To start openVAS run `sudo gvm-start`
+
+This [guide](https://www.hackingtutorials.org/scanning-tutorials/vulnerability-scanning-openvas-9-0-part-2/) will walk you through how to scan a machine and view the results. The scan will take a while so it is recommended you start it and come back to it later. The interface will look slightly different but the steps remain the same.
 
 ### Step 3: Remediation
 
@@ -61,7 +62,6 @@ You must complete a **write-up** of your work using the provided template. The w
 - Answers to all questions
 - Screenshots showing the before and after results of the OpenVAS scans
 
-
 #### Templates
 
 - <a href="lab-6-writeup-template.docx" download>Download the MS Word Write-Up Template (.docx)</a>
@@ -75,13 +75,12 @@ You must complete a **write-up** of your work using the provided template. The w
 
 ### Grading Breakdown (100 Points Total)
 
-
 | **Task**                             | **Points** |
 | ------------------------------------ | ---------- |
 | Metasploitable 2 has been scanned    | 20         |
 | 5 critical problems have been fixed  | 40         |
 | Write-Up Questions                   | 40         |             
 
-
 ### Submission
 Create a single PDF from the given `Write Up` file that contains your written report and screenshots showing that each requirement has been met. Upload the PDF to Learning Suite. Any other file format will not be accepted.
+
