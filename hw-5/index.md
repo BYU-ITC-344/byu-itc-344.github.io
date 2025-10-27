@@ -180,7 +180,7 @@ On your Windows Server Active Directory domain, create **four domain user accoun
     * **Why we use it:** LM and NTLM are vulnerable to password-cracking attacks. Using NTLMv2 only strengthens network security and prevents legacy protocol attacks.
     * **Impact on legacy systems:**
 
-      * Older systems such as Windows 7, Windows XP, or legacy applications that only support LM or NTLM will **fail to authenticate**.
+      * Older systems such as Windows XP, or legacy applications that only support LM or NTLM will **fail to authenticate**.
       * These systems must be upgraded or reconfigured to support NTLMv2, otherwise they cannot access domain resources.
 
 ### Result
@@ -225,7 +225,7 @@ This ensures security is maintained while minimizing disruption to critical lega
 
   * **Account lockout threshold**: 3 invalid attempts.
   * **Account lockout duration**: 15 minutes.
-  * **Reset account lockout counter after**: 30 minutes.
+  * **Reset account lockout counter after**: 5 minutes.
 
 
 ### Step 4: Test Group Policies
@@ -259,6 +259,7 @@ This ensures security is maintained while minimizing disruption to critical lega
 
 * **Network authentication:**
 
+  * You may need to force Windows 7 to use NTLM instead of NTLMv2
   * Attempt to connect login from Windows 7  → should fail due to **NTLMv2-only enforcement**.
 
 #### **Linux Client**
