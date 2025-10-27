@@ -259,8 +259,7 @@ This ensures security is maintained while minimizing disruption to critical lega
 
 * **Network authentication:**
 
-  * You may need to force Windows 7 to use NTLM instead of NTLMv2
-  * Attempt to connect login from Windows 7  → should fail due to **NTLMv2-only enforcement**.
+  * Attempt to connect login from Windows 7
 
 #### **Linux Client**
 
@@ -321,5 +320,5 @@ Here’s a **reference table** of common GPO security settings, organized by cat
 
 * Submit a **single PDF** file containing:
   * Screenshots (clearly labeled and readable).
-  * The two memos (subsystem control + AD policy memo).
+  * The memo
 * Upload the PDF to **Learning Suite**. Other formats will not be accepted.
