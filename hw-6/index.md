@@ -29,12 +29,10 @@ Windows maintains a detailed record of system activity through **event logs**, w
 1. Open **Local Security Policy** (`secpol.msc`) on your Windows 11 VM.
 1. Navigate to *Advanced Audit Policy Configuration → System Audit Policies - Local Group Policy*
 
-
 1. **Logon/Logoff → Audit Logon**
 
   - **Enable:** Success and Failure
-  - **Purpose:**
-      This policy tracks all attempts to log on or log off the system—whether interactive (via console or RDP), network-based, or service logons.
+  - **Purpose:** This policy tracks all attempts to log on or log off the system—whether interactive (via console or RDP), network-based, or service logons.
   - **Why it matters:**
     - **Success events** show legitimate user activity (e.g., user logins, scheduled tasks running under service accounts).
     - **Failure events** can indicate brute-force attempts, misconfigured services, or potential unauthorized access attempts.
@@ -42,8 +40,7 @@ Windows maintains a detailed record of system activity through **event logs**, w
 1. **Detailed Tracking → Audit Process Creation**
 
   - **Enable:** Success and Failure
-  - **Purpose:**
-      This policy logs every time a process is created or started, providing visibility into what commands or executables are being launched.
+  - **Purpose:** This policy logs every time a process is created or started, providing visibility into what commands or executables are being launched.
   - **Why it matters:**
 
     - Helps identify malicious scripts, command-line tools, or suspicious executables being run by attackers or compromised accounts.
@@ -53,12 +50,13 @@ Windows maintains a detailed record of system activity through **event logs**, w
 1. **Privilege Use → Audit Sensitive Privilege Use**
 
   - **Enable:** Success and Failure
-  - **Purpose:**
-      This policy tracks attempts to use sensitive Windows privileges (e.g., **SeDebugPrivilege**, **SeBackupPrivilege**, **SeShutdownPrivilege**).
+  - **Purpose:** This policy tracks attempts to use sensitive Windows privileges (e.g., **SeDebugPrivilege**, **SeBackupPrivilege**, **SeShutdownPrivilege**).
   - **Why it matters:**
 
     - Detects misuse of elevated privileges or privilege escalation attempts.
     - Identifies when administrators or malware attempt to perform powerful operations like loading drivers, modifying security tokens, or accessing protected processes.
+
+1. Take a screenshot showing all the settings you configured above.
 
 ### Step 2: Trigger Events
 
