@@ -28,7 +28,7 @@ Windows maintains a detailed record of system activity through **event logs**, w
 
 1. Open **Local Security Policy** (`secpol.msc`) on your Windows 11 VM.
 1. Navigate to *Advanced Audit Policy Configuration → System Audit Policies - Local Group Policy*
-
+1. Make sure you take a screenshot showing all the settings you are to configure.
 1. **Logon/Logoff → Audit Logon**
 
   - **Enable:** Success and Failure
@@ -49,14 +49,14 @@ Windows maintains a detailed record of system activity through **event logs**, w
 
 1. **Privilege Use → Audit Sensitive Privilege Use**
 
-  - **Enable:** Success and Failure
+  - **Enable:** Failure
   - **Purpose:** This policy tracks attempts to use sensitive Windows privileges (e.g., **SeDebugPrivilege**, **SeBackupPrivilege**, **SeShutdownPrivilege**).
   - **Why it matters:**
 
     - Detects misuse of elevated privileges or privilege escalation attempts.
     - Identifies when administrators or malware attempt to perform powerful operations like loading drivers, modifying security tokens, or accessing protected processes.
 
-1. Take a screenshot showing all the settings you configured above.
+
 
 ### Step 2: Trigger Events
 
@@ -96,7 +96,7 @@ Perform controlled actions to generate test logs:
   - `Windows Logs → Security` for authentication and privilege events.
 
   - `Applications and Services Logs → Microsoft → Windows → PowerShell → Operational` for PowerShell events.
-1. Identify specific **Event IDs** for the events you triggered in Step 2. 
+1. Identify specific **Event IDs** for the events you triggered in Step 2. You will need to look up the event codes.
 
 
 ### Step 4: Write Technical Report
