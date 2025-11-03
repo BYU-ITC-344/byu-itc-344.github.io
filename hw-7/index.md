@@ -281,15 +281,19 @@ A strong password policy is critical for enforcing account security and reducing
         PASS_MIN_DAYS   7     # Minimum days before a password can be changed
         PASS_WARN_AGE   14    # Warn user 14 days before expiration
         ```
+
       * Check that the settings have been applied using
+
       ```
       sudo chage -l intern1
       ```
+
       * You'll notice that the settings will not be applied. These settings will only apply to newly created users. To apply these settings to an existing user, run
-      ```
-      sudo chage -M 90 -m 7 -W 14 <user>
 
       ```
+      sudo chage -M 90 -m 7 -W 14 <user>
+      ```
+
       Run `sudo chage -l <user>` again to verify they have now been applied.
 
       * Take a screenshot of the `/etc/login.defs` file and your testing showing the settings applied to the user.
