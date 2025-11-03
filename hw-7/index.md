@@ -252,9 +252,10 @@ A strong password policy is critical for enforcing account security and reducing
     1. Locate the `pam_unix.so` line, which handles traditional password authentication, and add options for complexity, minimum length, and history:
 
          ```text
-         password requisite pam_pwquality.so retry=3 minlen=12 ucredit=-1 lcredit=-1 dcredit=-1 ocredit=-1
-         password [success=1 default=ignore] pam_unix.so obscure use_authtok try_first_pass sha512
-         password required pam_pwhistory.so remember=5 use_authtok
+         password  requisite  pam_pwquality.so retry=3 minlen=12 ucredit=-1 lcredit=-1 ocredit=-1
+         password  required   pam_pwhistory.so remember=2 enforce_for_root
+         password  [success=1 default=ignore] pam_unix.so obscure sha512 use_authtok try_first_pass
+                  
          ```
 
       * Take a screenshot of the `/etc/pam.d/common-password` file
@@ -280,7 +281,19 @@ A strong password policy is critical for enforcing account security and reducing
         PASS_MIN_DAYS   7     # Minimum days before a password can be changed
         PASS_WARN_AGE   14    # Warn user 14 days before expiration
         ```
-      * Take a screenshot of the `/etc/login.defs` file
+      * Check that the settings have been applied using
+      ```
+      sudo chage -l intern1
+      ```
+      * You'll notice that the settings will not be applied. These settings will only apply to newly created users. To apply these settings to an existing user, run
+      ```
+      sudo chage -M 90 -m 7 -W 14 <user>
+
+      ```
+      Run `sudo chage -l <user>` again to verify they have now been applied.
+
+      * Take a screenshot of the `/etc/login.defs` file and your testing showing the settings applied to the user.
+
 
 
 1. **Test the password policy**
