@@ -31,6 +31,7 @@ Due to the vulnerable nature of the Metasploitable machine, it will be hosted on
     - **Autostart**: Check this box to ensure the bridge starts automatically when Proxmox boots.
     - **Gateway**: Leave this blank for a host-only network.
     - Click `Create` to save the new bridge.
+    - Click on `Apply Configuration`
 1. In the left sidebar, click on the VM you want to assign to the new network and click on the `Hardware` tab.
 1. If the VM already has a network device double click on it and change the `Bridge` to `vmbr1`
 1. If there is no network device, click on `Add` and select `Network Device`.
@@ -54,6 +55,7 @@ After completing the **initial vulnerability scan**, identify and select **five 
 1. If a **single remediation** addresses multiple CVEs, it will **count as only one** vulnerability.
 1. You **cannot** simply enable the firewall and claim the issue is resolved; the remediation must directly address the underlying vulnerability.
 1. Document your remediation steps clearly, including commands, configuration changes, or updates applied.
+1. Rescan the machine to verify that the vulnerabilities have been fixed.
 
 ### Step 4: Write up
 
