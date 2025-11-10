@@ -314,7 +314,7 @@ A strong password policy is critical for enforcing account security and reducing
 ### Step 1: Configure Key-Based Authentication
 
 1. On your **Windows 11 VM**, generate two SSH key pairs. One for the user analyst1 and the other for intern1.
-   - Use the `ssh-keygen` command in PowerShell. Make sure you give the keys different names when asked `Enter file in which to save the key`. If you leave this blank or choose the same name, you will end up with the same key.
+   - Use the `ssh-keygen` command in PowerShell. Make sure you give the keys different names when asked `Enter file in which to save the key`. If you leave this blank or choose the same name, you will only one key.
 1. Copy the public key to your Ubuntu Server VM:
 1. Verify key-based login works
 1. Take a screenshot showing both keys work.
