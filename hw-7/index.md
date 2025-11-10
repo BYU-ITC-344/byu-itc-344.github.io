@@ -17,14 +17,16 @@ In this assignment, you will configure and test several core Linux security mech
 
 The assignment is divided into two main parts:
 
-1. **User Management and Authentication Controls (Ubuntu Desktop)**
-1. **SSH Service Hardening (Ubuntu Server)**
+1. **User Management and Authentication Controls (Ubuntu)**
+1. **SSH Service Hardening (Ubuntu)**
 
-## Part 1: Ubuntu Desktop – User Management & Authentication Controls
+Use either Ubuntu 22.04 or Ubuntu 24.04
+
+## Part 1: Ubuntu – User Management & Authentication Controls
 
 ### Step 1: Create and Manage User Accounts
 
-1. Take a snapshot of your **Ubuntu Server**VM
+1. Take a snapshot of your **Ubuntu** VM
 
 1. Inside your VM. Open a terminal and create the following users:
 
@@ -309,13 +311,13 @@ A strong password policy is critical for enforcing account security and reducing
    1. Try changing the password back to an old password that meets the requirements which should be denied
    1. Take a screenshot showing all of the above.
 
-## Part 2: Ubuntu Server – SSH Hardening
+## Part 2: Ubuntu – SSH Hardening
 
 ### Step 1: Configure Key-Based Authentication
 
 1. On your **Windows 11 VM**, generate two SSH key pairs. One for the user analyst1 and the other for intern1.
    - Use the `ssh-keygen` command in PowerShell. Make sure you give the keys different names when asked `Enter file in which to save the key`. If you leave this blank or choose the same name, you will only one key.
-1. Copy the public key to your Ubuntu Server VM:
+1. Copy the public key to your Ubuntu VM:
 1. Verify key-based login works
 1. Take a screenshot showing both keys work.
 
@@ -387,7 +389,7 @@ Disabling password authentication and root login is a critical step in securing 
 1. Test the new SSH settings by attempting to log in from another terminal:
 
 ```bash
-ssh user@server_ip
+ssh user@VM_ip
 ```
 
 * Password login should fail.
