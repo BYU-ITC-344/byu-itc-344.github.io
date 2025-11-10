@@ -26,7 +26,7 @@ The assignment is divided into two main parts:
 
 1. Take a snapshot of your **Ubuntu Server**VM
 
-1. Open a terminal and create the following users:
+1. Inside your VM. Open a terminal and create the following users:
 
   - analyst1
   - intern1
@@ -294,7 +294,7 @@ A strong password policy is critical for enforcing account security and reducing
       sudo chage -M 90 -m 7 -W 14 <user>
       ```
 
-      Run `sudo chage -l <user>` again to verify they have now been applied.
+      * Run `sudo chage -l <user>` again to verify they have now been applied.
 
       * Take a screenshot of the `/etc/login.defs` file and your testing showing the settings applied to the user.
 
@@ -314,6 +314,7 @@ A strong password policy is critical for enforcing account security and reducing
 ### Step 1: Configure Key-Based Authentication
 
 1. On your **Windows 11 VM**, generate two SSH key pairs. One for the user analyst1 and the other for intern1.
+   - Use the `ssh-keygen` command in PowerShell. Make sure you give the keys different names when asked `Enter file in which to save the key`. If you leave this blank or choose the same name, you will end up with the same key.
 1. Copy the public key to your Ubuntu Server VM:
 1. Verify key-based login works
 1. Take a screenshot showing both keys work.
