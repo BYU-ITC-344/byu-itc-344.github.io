@@ -317,7 +317,7 @@ A strong password policy is critical for enforcing account security and reducing
 
 1. On your **Windows 11 VM**, generate two SSH key pairs. One for the user analyst1 and the other for intern1.
    - Use the `ssh-keygen` command in PowerShell. Make sure you give the keys different names when asked `Enter file in which to save the key`. If you leave this blank or choose the same name, you will only one key.
-1. Copy the public key to your Ubuntu VM:
+1. Copy the public key to your Ubuntu VM.
 1. Verify key-based login works
 1. Take a screenshot showing both keys work.
 
@@ -334,7 +334,7 @@ Disabling password authentication and root login is a critical step in securing 
    sudo nano /etc/ssh/sshd_config
    ```
 
-   * This file controls the behavior of the SSH daemon (`sshd`), including authentication methods, login restrictions, and security settings.
+   * This file controls the behavior of the SSH daemon (`sshd`), including authentication methods, login restrictions, and security settings. There is also another file hiding that has `PasswordAuthentication yes` that will override your change. Find the file and delete it.
 
 
 1. Update the relevant configuration options
