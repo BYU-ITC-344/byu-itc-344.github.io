@@ -1,7 +1,7 @@
 
 # Homework 8: Mandatory Access Control (MAC) in Enterprise Operating Systems
 
-**Objective:** Research and write a **1-page paper** explaining Mandatory Access Control (MAC) in enterprise operating systems and how it enhances security.
+**Objective:** Research and write a **1-2 page paper** explaining Mandatory Access Control (MAC) in enterprise operating systems and how it enhances security.
 
 ## **Instructions**
 
