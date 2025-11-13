@@ -259,6 +259,32 @@ You must also submit a **technical report** addressed to the IT group.
 | Technical Report  | 100        |             
 
 
+### Grading Rubric – Executive Memo-Style Report (To Leadership)
+
+| Category                              | Points | Criteria                                                                                                                                                                                                  |
+| ------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Memo Format & Structure**           | 5      | Proper use of memo format with **To, From, Date, Subject**. Clear headings, logical flow, professional presentation.                                                                                      |
+| **Issues Discovered**                 | 20     | High-level description of problems in **plain, non-technical language**. Emphasizes **business impact** (downtime, reputational risk, financial loss). Clearly identifies **risks posed**.                |
+| **Resolution Summary**                | 20     | Clear, concise explanation of how issues were resolved **in terms of outcomes**, not technical steps. Emphasizes restored stability, continuity, and security.                                            |
+| **Policy & Practice Recommendations** | 20     | Forward-looking, realistic recommendations that protect business interests. Examples: employee training, monitoring, audits, incident response. Recommendations are **actionable and clearly justified**. |
+| **Clarity & Professionalism**         | 15     | Clear, logical writing suitable for executives. Polished grammar, spelling, and sentence structure. No unnecessary technical jargon.                                                                      |
+| **Formatting & Presentation**         | 10     | Meets length (1–2 pages, single-spaced, 12 pt Times New Roman). Professional PDF format, headings used appropriately.                                                                                     |
+| **Overall Impact & Persuasiveness**   | 10     | Report clearly communicates urgency, importance, and recommended actions. Executives can **understand and act on the information**.                                                                       |
+
+
+### Grading Rubric – Technical Report (To IT Staff)
+
+| Category                              | Points | Criteria                                                                                                                                                                                          |
+| ------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Introduction & Context**            | 5      | Provides brief context of the assessment/incident. Explains purpose of report for IT audience.                                                                                                    |
+| **Issues Discovered**                 | 25     | Detailed technical descriptions of all issues, including **error messages, misconfigurations, vulnerabilities, malware symptoms**. Clear explanation of scope and impact.                         |
+| **Resolution Steps**                  | 25     | Step-by-step remediation details. Includes **commands, scripts, configuration changes, patches applied**. Explains partially resolved issues or workarounds.                                      |
+| **Policy & Practice Recommendations** | 20     | Technical recommendations to prevent recurrence. Covers patch management, monitoring, malware detection, access controls, incident response. Justified with best practices or security standards. |
+| **Clarity & Technical Accuracy**      | 10     | Logical, readable, and technically accurate. Uses appropriate terminology for IT staff. Clear headings, bullet points, numbered lists for readability.                                            |
+| **Formatting & Presentation**         | 10     | Meets length (3+ pages, single-spaced, 12 pt Times New Roman). Professional PDF format. Optional appendices included properly.                                                                    |
+| **Evidence & Supporting Material**    | 5      | Relevant screenshots, log snippets, or configuration files included where appropriate. Supports claims without cluttering main report.                                                            |
+
+
 ## Submission Instructions
 
 * **Lab 7: Operating System Defense – Defense Points**
