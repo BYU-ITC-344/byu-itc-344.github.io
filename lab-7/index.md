@@ -47,7 +47,10 @@ By using the platform, you acknowledge and agree to this disclaimer.
   - Each additional reset: **–10 points**.  
   - Resets only during normal hours (9:00 a.m. – 5:00 p.m.).  
 - Your VM must be **powered on and scorable** when the lab ends.  
-- Reporting legitimate bugs/vulnerabilities may earn **bonus points**, but this is not permission to pen test the infrastructure.  
+- Reporting legitimate bugs/vulnerabilities may earn **bonus points**, but this is not permission to pen test the infrastructure.
+- The scoring engine runs from /opt/aeacus. All programs, services, and files located in—or related to—this directory are out of scope and must not be modified, deleted, or altered in any way.
+- If an entire file is malicious, delete the file. If only a portion of the file is malicious, remove only the malicious portion while preserving the rest.
+
 
 ## Scenario
 
@@ -129,6 +132,7 @@ If these services are down, you will lose points, until they are restored to the
 - **UFW (Firewall)**
 
   - Rules must align with allowed critical services.
+  - Use only the standard protocols for the service
 
 
 ### Folder Permissions
@@ -169,7 +173,7 @@ Welcome to the Veridian Solutions server!!
 
 ### Packages
 
-- Ensure all packages are up to date.
+- Ensure all packages are up to date and stay up to date.
 - Install any missing **critical services**.
 
 
