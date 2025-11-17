@@ -47,7 +47,10 @@ By using the platform, you acknowledge and agree to this disclaimer.
   - Each additional reset: **–10 points**.  
   - Resets only during normal hours (9:00 a.m. – 5:00 p.m.).  
 - Your VM must be **powered on and scorable** when the lab ends.  
-- Reporting legitimate bugs/vulnerabilities may earn **bonus points**, but this is not permission to pen test the infrastructure.  
+- Reporting legitimate bugs/vulnerabilities may earn **bonus points**, but this is not permission to pen test the infrastructure.
+- The scoring engine runs from /opt/aeacus. All programs, services, and files located in—or related to—this directory are out of scope and must not be modified, deleted, or altered in any way.
+- If an entire file is malicious, delete the file. If only a portion of the file is malicious, remove only the malicious portion while preserving the rest.
+
 
 ## Scenario
 
@@ -129,6 +132,7 @@ If these services are down, you will lose points, until they are restored to the
 - **UFW (Firewall)**
 
   - Rules must align with allowed critical services.
+  - Use only the standard protocols for the service
 
 
 ### Folder Permissions
@@ -169,7 +173,7 @@ Welcome to the Veridian Solutions server!!
 
 ### Packages
 
-- Ensure all packages are up to date.
+- Ensure all packages are up to date and stay up to date.
 - Install any missing **critical services**.
 
 
@@ -257,6 +261,32 @@ You must also submit a **technical report** addressed to the IT group.
 | Defense Points    | 500        |
 | Memo              | 100        |
 | Technical Report  | 100        |             
+
+
+### Grading Rubric – Executive Memo-Style Report (To Leadership)
+
+| Category                              | Points | Criteria                                                                                                                                                                                                  |
+| ------------------------------------- | ------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Memo Format & Structure**           | 5      | Proper use of memo format with **To, From, Date, Subject**. Clear headings, logical flow, professional presentation.                                                                                      |
+| **Issues Discovered**                 | 20     | High-level description of problems in **plain, non-technical language**. Emphasizes **business impact** (downtime, reputational risk, financial loss). Clearly identifies **risks posed**.                |
+| **Resolution Summary**                | 20     | Clear, concise explanation of how issues were resolved **in terms of outcomes**, not technical steps. Emphasizes restored stability, continuity, and security.                                            |
+| **Policy & Practice Recommendations** | 20     | Forward-looking, realistic recommendations that protect business interests. Examples: employee training, monitoring, audits, incident response. Recommendations are **actionable and clearly justified**. |
+| **Clarity & Professionalism**         | 15     | Clear, logical writing suitable for executives. Polished grammar, spelling, and sentence structure. No unnecessary technical jargon.                                                                      |
+| **Formatting & Presentation**         | 10     | Meets length (1–2 pages, single-spaced, 12 pt Times New Roman). Professional PDF format, headings used appropriately.                                                                                     |
+| **Overall Impact & Persuasiveness**   | 10     | Report clearly communicates urgency, importance, and recommended actions. Executives can **understand and act on the information**.                                                                       |
+
+
+### Grading Rubric – Technical Report (To IT Staff)
+
+| Category                              | Points | Criteria                                                                                                                                                                                          |
+| ------------------------------------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Introduction & Context**            | 5      | Provides brief context of the assessment/incident. Explains purpose of report for IT audience.                                                                                                    |
+| **Issues Discovered**                 | 25     | Detailed technical descriptions of all issues, including **error messages, misconfigurations, vulnerabilities, malware symptoms**. Clear explanation of scope and impact.                         |
+| **Resolution Steps**                  | 25     | Step-by-step remediation details. Includes **commands, scripts, configuration changes, patches applied**. Explains partially resolved issues or workarounds.                                      |
+| **Policy & Practice Recommendations** | 20     | Technical recommendations to prevent recurrence. Covers patch management, monitoring, malware detection, access controls, incident response. Justified with best practices or security standards. |
+| **Clarity & Technical Accuracy**      | 10     | Logical, readable, and technically accurate. Uses appropriate terminology for IT staff. Clear headings, bullet points, numbered lists for readability.                                            |
+| **Formatting & Presentation**         | 10     | Meets length (3+ pages, single-spaced, 12 pt Times New Roman). Professional PDF format. Optional appendices included properly.                                                                    |
+| **Evidence & Supporting Material**    | 5      | Relevant screenshots, log snippets, or configuration files included where appropriate. Supports claims without cluttering main report.                                                            |
 
 
 ## Submission Instructions
